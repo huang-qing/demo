@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- For intranet rendering only, remove when page is placed in production. -->
+    <title>SVG viewBox Attribute Values</title>
+    <script src="https://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+</head>
+
+<body style="padding:0px; margin:0px;">
+    <div>
+        <label>宽度</label> <input id="width" value="600" />
+        <label>高度</label> <input id="height" value="1200" />
+        <label>圆形</label> <label>cx:</label> <input id="circle-x" value="100" /> cy: <input id="circle-y" value="100" />
+
+        <label>scale:</label> <input id="scale" value="1" />
+        <button id="btn">设置</button>
+    </div>
+    <p></p>
+    <div id="container" style="margin:auto;width:200px;height:200px">
+        <svg id="svg" currentScale="1" width="600" height="1200" viewBox="0 0 600 1200">
+            <g>
+                <rect x="0" y="0" width="200" height="200" style="stroke: black; fill: none; stroke-width: 1px;" />
+            </g>
+            <circle id="circle" cx="100" cy="100" r="50" style="fill: purple;" />
+
+            <rect x="124" y="27" width="129" height="85" rx="6" ry="6" stroke="#0087d2" fill="rgba(0,0,0,0)"
+                style="stroke-width: 2;"></rect>
+            <desc>Created with Snap</desc>
+            <defs>
+                <marker viewBox="0 0 12 12" markerWidth="6" markerHeight="6" orient="auto" refX="6" refY="3"
+                    id="markerSkhzvvglq9" fill="#0087d2" style="">
+                    <path d="M0,0 L0,6 L9,3 z"></path>
+                </marker>
+                <symbol viewBox="0 0 1024 1024" id="svg-annotate-note-defs">
+                    <path
+                        d="M838.279939 1009.368458H175.570862A62.987722 62.987722 0 0 1 112.567491 946.380736V133.643514a63.003371 63.003371 0 0 1 63.003371-63.003371H235.256618V28.841334a20.969825 20.969825 0 1 1 41.986598 0v41.798809h58.277336V28.841334a20.985474 20.985474 0 1 1 41.986598 0v41.798809h58.277335V28.841334a21.001124 21.001124 0 1 1 42.002247 0v41.798809h58.277336V28.841334a21.001124 21.001124 0 1 1 42.002247 0v41.798809h58.261686V28.841334a21.001124 21.001124 0 1 1 42.002247 0v41.798809h58.292985V28.841334a20.969825 20.969825 0 1 1 41.986598 0v41.798809h59.670108A63.01902 63.01902 0 0 1 901.283309 133.643514v812.737222a63.003371 63.003371 0 0 1-63.00337 62.987722z m0-721.299395h-94.160776a21.001124 21.001124 0 0 1 0-41.986598h94.160776V133.643514h-59.670108v43.395019a20.969825 20.969825 0 1 1-41.986598 0V133.643514h-58.292985v43.395019a21.001124 21.001124 0 1 1-42.002247 0V133.643514h-58.261686v43.395019a21.001124 21.001124 0 0 1-42.002247 0V133.643514h-58.277336v43.395019a21.001124 21.001124 0 1 1-42.002247 0V133.643514H377.50715v43.395019a20.969825 20.969825 0 1 1-41.986598 0V133.643514h-58.277336v43.395019a21.001124 21.001124 0 1 1-41.986598 0V133.643514H175.570862v112.438951h450.976437a20.969825 20.969825 0 1 1 0 41.986598H175.570862v658.311673h662.709077V288.069063zM279.903567 426.908086h80.358249a21.016773 21.016773 0 0 1 0 42.002247h-80.358249a21.001124 21.001124 0 1 1 0-42.002247z m0 110.295021h80.358249a21.001124 21.001124 0 0 1 0 42.002247h-80.358249a21.001124 21.001124 0 0 1 0-42.002247z m0 115.396636h80.358249a21.001124 21.001124 0 0 1 0 42.002247h-80.358249a21.001124 21.001124 0 0 1 0-42.002247z m0 122.157057h80.358249a20.985474 20.985474 0 1 1 0 41.986598h-80.358249a21.001124 21.001124 0 1 1 0-41.986598zM478.303153 426.908086h255.64408a21.016773 21.016773 0 0 1 0 42.002247H478.303153a21.001124 21.001124 0 1 1 0-42.002247z m0 110.295021h255.64408a21.001124 21.001124 0 0 1 0 42.002247H478.303153a21.001124 21.001124 0 0 1 0-42.002247z m0 115.396636h255.64408a21.001124 21.001124 0 0 1 0 42.002247H478.303153a21.001124 21.001124 0 0 1 0-42.002247z m0 122.157057h255.64408a20.985474 20.985474 0 1 1 0 41.986598H478.303153a21.001124 21.001124 0 1 1 0-41.986598z">
+                    </path>
+                </symbol>
+            </defs>
+            <g class="svg-annotate-rect"></g>
+            <g class="svg-annotate-ellipse">
+                <ellipse cx="420" cy="70" rx="80" ry="40.5" stroke="#0087d2" fill="rgba(0,0,0,0)"
+                    style="stroke-width: 2;"></ellipse>
+            </g>
+            <g class="svg-annotate-arrow">
+                <line x1="389" x2="505" y1="267" y2="135" stroke="#0087d2" fill="rgba(0,0,0,0)"
+                    style="stroke-width: 3; marker-end: url(&quot;#markerSkhzvvglq9&quot;);"></line>
+            </g>
+            <g class="svg-annotate-line">
+                <line x1="115" x2="14" y1="215" y2="218" stroke="#0087d2" fill="rgba(0,0,0,0)" style="stroke-width: 2;">
+                </line>
+            </g>
+            <g class="svg-annotate-polyline">
+                <polyline points="122,238,250,236,253,319,346,317,345,245,400,244" stroke="#0087d2" fill="rgba(0,0,0,0)"
+                    style="stroke-width: 2;"></polyline>
+            </g>
+            <g class="svg-annotate-textbox"><text x="82" y="337" stroke="1" fill="#0087d2"
+                    style="stroke-width: 2; font-size: 20px;">测试</text></g>
+            <g class="svg-annotate-note">
+                <use xlink:href="#svg-annotate-note-defs" stroke="#0087d2" fill="#0087d2" width="36" height="36" x="150"
+                    y="361" style="stroke-width: 2; font-size: 20px;"></use>
+            </g>
+        </svg>
+    </div>
+
+</body>
+
+<script>
+    $("#btn").on("click", function (e) {
+        var width, height, circleX, circleY,
+            $scale = $("#scale");
+        $container = $("#container"),
+            $circle = $("#circle"),
+            $svg = $("#svg");
+
+
+        scale($scale.val());
+
+        width = $("#width").val();
+        height = $("#height").val();
+        circleX = $("#circle-x").val();
+        circleY = $("#circle-y").val();
+        //$scale = $("#scale").val();
+
+        $container.css({
+            width: width + "px",
+            height: height + "px"
+        });
+
+        $svg.attr({
+            width: width,
+            height: height
+        })
+
+        $circle.attr({
+            cx: circleX,
+            cy: circleY
+        });
+    });
+
+    function scale(val) {
+        var width = 600,
+            height = 1200;
+
+        width = Math.floor((width - 0) * val);
+        height = Math.floor((height - 0) * val);
+        $("#width").val(width);
+        $("#height").val(height);
+    }
+
+</script>
+
+</html>

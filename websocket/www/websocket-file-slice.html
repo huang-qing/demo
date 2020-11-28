@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>websocket sent file</title>
+</head>
+
+<body>
+    <input type="file" id='file' multiple />
+</body>
+<script>
+    const ws = new WebSocket("ws://localhost:8888");
+    var reader = null;
+    var offset = 1024 * 256;
+    var curLoaded = 0;
+    var file = null;
+    var total = 0;
+    var startTime = null;
+    var endTime;
+
+    ws.onopen = function (event) {
+        console.log('连接成功');
+    }
+    ws.onmessage = async function (event) {
+        console.log('message form server ', event.data);
+        const data = event.data;
+        console.log('text: ' + data);
+
+        if (data == 'reveived') {
+            return;
+        }
+        else if (data == 'receiving') {
+            sendFile();
+        }
+
+    }
+
+    function upload() {
+        file = document
+            .querySelector('#file')
+            .files[0];
+
+        if (file) {
+            curLoaded = 0;
+            startTime = new Date();
+            let fileName = file.name;
+
+            ws.send(fileName);
+            sendFile();
+        }
+    }
+
+    // function upload(loaded) {
+    //     var blob = reader.result;
+    //     ws.send(blob);
+    // }
+
+    function sendFile() {
+        reader = new FileReader();
+        reader.onload = function (e) {
+            console.log(`读取总数：${e.loaded}`);
+            var size = e.loaded;
+            var blob = reader.result;
+            if (size <= 0) {
+                ws.send('uploaded');
+            }
+            else {
+                curLoaded = curLoaded + offset;
+                ws.send(blob);
+            }
+
+        }
+        var blob = file.slice(curLoaded, curLoaded + offset);
+        reader.readAsArrayBuffer(blob);
+    }
+
+
+    var file = document.getElementById("file");
+    file.onchange = function (e) {
+        upload();
+    }
+</script>
+
+</html>

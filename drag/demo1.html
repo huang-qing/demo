@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box ul
+        {
+            min-height: 60px;
+            border: #ccccdd dotted 1px;
+        }
+        .box li
+        {
+            border:1px #ccc solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li id="li1"  ondragstart="dragstart(event)" ondragend="dragend(event)">标题一</li>
+            <li id="li2" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">标题二</li>
+            <li id="li3" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">标题三</li>
+            <li id="li4" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">标题四</li>
+            <li id="li5" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">标题五</li>
+        </ul>
+    </div>
+    <div class="box">
+        <ul ondrop="drop(event)" ondragenter="dragenter(event)" ondragover="dragover(event)"
+            ondragleave="dragleave(event)">
+
+        </ul>
+    </div>
+</body>
+<script>
+    var $ = document.querySelectorAll.bind(document);
+
+    // 开始拖拽元素
+    function dragstart(e) {
+        e.dataTransfer.setData('li', e.target.id);
+        console.log('%c 1、开始拖拽(dragstart)', 'color: green;')
+    }
+
+    // 拖拽元素进入目标窗器
+    function dragenter(e) {
+        console.log('%c 2、拖拽元素进入目标窗器(dragenter)', 'color: orange;')
+    }
+
+    // 拖拽元素悬浮目标窗器上
+    function dragover(e) {
+        e.preventDefault();
+        $('.box')[1].style.border = '1px dashed red';
+        console.log('%c 3、拖拽元素悬浮目标窗器上(dragover)', 'color: red;')
+    }
+
+    // 拖拽元素离开目标窗器
+    function dragleave(e) {
+        $('.box')[1].style.border = 'none';
+        console.log('%c 4、拖拽元素离开目标窗器(dragleave)', 'color: black;')
+    }
+
+    // 放下拖拽元素
+    function drop(e) {
+        e.preventDefault();
+        var li = e.dataTransfer.getData('li');
+        if (e.target.nodeName === 'UL') {
+            e.target.appendChild(document.getElementById(li));
+        } else {
+            liNode = document.getElementById(li);
+            e.target.parentNode.insertBefore(liNode, e.target);
+        }
+        $('.box')[1].style.border = 'none';
+        console.log('%c 5、放下拖拽元素(drop)', 'color: blue;')
+    }
+
+    // 完成拖拽
+    function dragend(e) {
+        console.log('%c 6、完成拖拽(dragend)', 'color: gray;')
+    }
+</script>
+
+</html>

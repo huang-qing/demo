@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .list li {
+            float: left;
+            height: 36px;
+            padding: 0 10px;
+            margin: 10px 0 0 10px;
+            border: 1px solid #ddd;
+            line-height: 36px;
+        }
+
+        .list .active {
+            border-color: green;
+            color: green;
+        }
+
+        .list .dashed {
+            display: none;
+            border-style: dashed;
+        }
+
+        .list .num {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li class="dashed" ondrop="drop(event)" data-order="0"></li>
+        <li class="active" draggable="true" data-order="1"><span class="num">1</span><label><input type="checkbox"
+                    checked="checked">天天向上1</label></li>
+        <li class="active" draggable="true" data-order="2"><span class="num">2</span><label><input type="checkbox"
+                    checked="checked">天天向上22</label></li>
+        <li class="active" draggable="true" data-order="3"><span class="num">3</span><label><input type="checkbox"
+                    checked="checked">天天向上333</label></li>
+        <li data-order="4"><span class="num">4</span><label><input type="checkbox">天天向上4444</label></li>
+        <li data-order="5"><span class="num">5</span><label><input type="checkbox">天天向上55555</label></li>
+        <li class="active" draggable="true" data-order="6"><span class="num">6</span><label><input type="checkbox"
+                    checked="checked">天天向上666666</label></li>
+        <li data-order="7"><span class="num">7</span><label><input type="checkbox">天天向上7777777</label></li>
+        <li data-order="8"><span class="num">8</span><label><input type="checkbox">天天向上88888888</label></li>
+        <li data-order="9"><span class="num">9</span><label><input type="checkbox">天天向上999999999</label></li>
+    </ul>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    var dragEleWth; // 拖动元素宽度
+    $('.list li').click(function (e) { // 勾选
+        e.preventDefault();
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active').removeAttr('draggable').find(':checkbox').prop('checked', false);
+        } else {
+            $(this).addClass('active').attr('draggable', true).find(':checkbox').prop('checked', true);
+        }
+    }).on('dragstart', function (e) { // 拖动元素
+        dragEleWth = $(this).width();
+        e.originalEvent.dataTransfer.setData('order', +$(this).data('order'));
+    }).on('dragover', function (e) { // 拖动悬浮
+        e.preventDefault();
+        if ($(this).hasClass('active')) {
+            $('.list .dashed').show().width(dragEleWth);
+            $(this).before($('.list .dashed'));
+        }
+    });
+    // 放下
+    function drop(e) {
+        e.preventDefault();
+        var order = e.dataTransfer.getData('order');
+        var dashedLi = $('.list .dashed');
+        dashedLi.before($('[data-order="' + order + '"]'));
+        dashedLi.hide().removeAttr('style');
+        $('.list').prepend(dashedLi);
+        $('.list li').each(function (i) {
+            $(this).attr('data-order', i).children('.num').text(i);
+        });
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clipboardData</title>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="复制到粘贴板" />
+    <textarea></textarea>
+    <input type="button" id="btn2" value="读取粘贴板内容到文本框中" />
+    <script type="text/javascript">
+        document.getElementById("btn1").onclick = function () {
+            window.clipboardData.setData("Text", "我是新的内容");
+        };
+
+        //从excel获取的数据格式
+
+        //单行： 
+        //"40645\t\"1、BOM单层下级件超过200个，点击下级件数量 检出父级视图， 控件获取201行数据时报错\n2、BOM编辑单元格后点击空行报错\"\r\n"
+
+        //多行：
+        //"40645\t\"1、BOM单层下级件超过200个，点击下级件数量 检出父级视图， 控件获取201行数据时报错\n2、BOM编辑单元格后点击空行报错\"\r\neeee\t5555\r\n777\t999\r\n"
+
+        //列：
+        //"\"1、BOM单层下级件超过200个，点击下级件数量 检出父级视图， 控件获取201行数据时报错\n2、BOM编辑单元格后点击空行报错\"\r\n5555\r\n999\r\n"
+
+        //excel数据分解规则： 使用\r\n分割读取行；使用\t分割读取单元格；
+        document.getElementById('btn2').onclick = function () {
+            //IE可以通过clipboardData，配合复制快捷键，复制数据
+            var text = window.clipboardData.getData('Text');
+            document.getElementById('txt1').setAttribute('value', text);
+        };
+
+        //chrome不支持window.clipboardData获取剪切板中的数据
+        //可以在document paste 事件中e.clipboardData对剪切板文本数据进行处理
+        //IE仅支持在输入框中
+        document.addEventListener('paste', function (e) {
+            var clipboardData = e.clipboardData;
+            //是否支持clipboardData且有粘贴内容
+            if (!(clipboardData && clipboardData.items)) {
+                return;
+            }
+            if (e.clipboardData.types.indexOf('text/html') > -1) {
+                var data;
+                //data = e.clipboardData.getData();
+                data = e.clipboardData.getData('text/html');
+                data = e.clipboardData.getData('text/plain');
+                console.log(data);
+                data = e.clipboardData.getData('text/rtf');
+                data = e.clipboardData.getData('Files');
+            }
+
+            for (var i = 0, len = clipboardData.items.length; i < len; i++) {
+                var item = clipboardData.items[i];
+                if (item.kind === "string" && item.type == "text/plain") {
+                    item.getAsString(function (str) {
+                        // str 是获取到的字符串,创建文本框
+                        //处理粘贴的文字内容
+                        console.log(str);
+                    })
+                } else if (item.kind === "file") {
+                    //file 一般是各种截图base64数据
+                    var pasteFile = item.getAsFile();
+                    // pasteFile就是获取到的文件
+                    var reader = new FileReader();
+                    reader.onload = function (event) {
+                        var base64Img = event.target.result;
+                    };
+                    // data url  
+                    reader.readAsDataURL(pasteFile);
+                }
+                var copy_content = e.clipboardData.getData('text/plain');
+                console.log(copy_content);
+            }
+        })
+
+        document.addEventListener('copy', function (e) {
+            //可以触发copy，但使用e.clipboardData.setData无效
+            var text = e.clipboardData.setData('text/plain', "use copy set text to clipboard");
+            e.preventDefault();
+            //document.execCommand("copy");
+        });
+
+        // Overwrite what is copied to the clipboard.
+        document.addEventListener('cut', function (e) {
+            // e.clipboardData is initially empty, but we can set it to the
+            // data that we want copied onto the clipboard as part of the cut.
+            // Write the data that we want copied onto the clipboard.
+            e.clipboardData.setData('text/plain', 'Hello, world!');
+            e.clipboardData.setData('text/html', '<b>Hello, world!</b>');
+
+            // Since we will be canceling the cut operation, we need to manually
+            // update the document to remove the currently selected text.
+            //deleteCurrentDocumentSelection();
+
+            // This is necessary to prevent the document selection from being
+            // written to the clipboard.
+            e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

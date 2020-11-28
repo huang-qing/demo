@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>websocket sent text</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const ws = new WebSocket("ws://localhost:8888");
+    ws.onopen = function (event) {
+        console.log('连接成功');
+    }
+    ws.onmessage = async function (event) {
+        console.log('message form server ', event.data);
+        const data = event.data;
+        console.log('text: ' + data);
+    }
+
+    function send(message) {
+        if (ws && ws.readyState !== WebSocket.OPEN) {
+            console.log('连接未建立');
+        }
+
+        if (message) {
+            ws.send(message);
+            console.log(`未发送字节数：${ws.bufferedAmount}`);
+        }
+    }
+
+
+</script>
+
+</html>

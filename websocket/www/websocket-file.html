@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>websocket sent file</title>
+</head>
+
+<body>
+    <input type="file" id='file' multiple />
+    <input type="file" id="file_input" webkitdirectory directory />
+</body>
+<script>
+    const ws = new WebSocket("ws://localhost:8888");
+    ws.onopen = function (event) {
+        console.log('连接成功');
+    }
+    ws.onmessage = async function (event) {
+        console.log('message form server ', event.data);
+        const data = event.data;
+        console.log('text: ' + data);
+    }
+
+    function send() {
+        // if (ws && ws.readyState !== WebSocket.OPEN) {
+        //     console.log('连接未建立');
+        // }
+
+        var file = document
+            .querySelector('#file')
+            .files[0];
+        if (file) {
+
+            let fileName=file.name;
+            ws.send(fileName);
+            let reader = new FileReader();
+            reader.readAsArrayBuffer(file);
+            reader.onload = () => {
+                console.log(reader.result);
+                //ws.send(JSON.stringify({name:file.name,operation:'upload'}));
+                ws.send(reader.result);
+            }
+        }
+    }
+
+    var file = document.getElementById("file");
+    file.onchange = function (e) {
+        console.log('fileonchange');
+        send();
+    }
+</script>
+
+</html>
