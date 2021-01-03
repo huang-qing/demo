@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "http-get": "node client/http-get.js",
+    "http-post": "node client/http-post.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "formidable": "^1.2.2",
     "mime": "^2.4.7"
   }
 }
