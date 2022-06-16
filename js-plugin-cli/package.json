@@ -1,0 +1,26 @@
+{
+  "name": "js-plugin-cli",
+  "version": "1.0.0",
+  "description": "cli",
+  "main": "./bin/index.js",
+  "type":"module",
+  "bin": {
+    "js-plugin-cli": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^8.3.0",
+    "download": "^8.0.0",
+    "fs-extra": "^10.0.0",
+    "handlebars": "^4.7.7",
+    "inquirer": "^8.2.0",
+    "log-symbols": "^5.1.0",
+    "ora": "^6.0.1",
+    "update-notifier": "^5.1.0"
+  }
+}
