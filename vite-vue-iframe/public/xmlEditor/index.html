@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="js/codemirror.min.css" rel="stylesheet">
+  <!-- <link href="js/bootstrap.min.css"  rel="stylesheet"> -->
+</head>
+
+<body>
+  <textarea class="form-control" id="code" name="code" rows="10">
+<sites>
+<site>
+<name>RUNOOB</name>
+<url>www.runoob.com</url>
+</site>
+<site>
+<name>Google</name>
+<url>www.google.com</url>
+</site>
+<site>
+<name>Facebook</name>
+<url>www.facebook.com</url>
+</site>
+</sites>
+</textarea>
+
+
+  <!-- <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.format.js"></script> -->
+  <script src="js/codemirror.min.js"></script>
+  <script src="js/xml.js"></script>
+  <script>
+    CodeMirror.fromTextArea(document.getElementById("code"), {
+      lineNumbers: true,
+      matchBrackets: true,
+      mode: "application/xml",
+      indentUnit: 4,
+      indentWithTabs: true,
+    });
+  </script>
+</body>
+
+</html>
