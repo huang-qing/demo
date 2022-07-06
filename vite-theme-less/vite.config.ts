@@ -10,9 +10,13 @@ import { addThemeConfig } from "./build/theme-config";
 //import { env } from "process";
 
 const root = path.join(__dirname, "./src");
+const isDev=true;
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
+  if(isDev){
+    return getSampleViteConfig();
+  }
   const env = loadEnv({ command, mode });
   const userConfig: UserConfig = {
     plugins: [

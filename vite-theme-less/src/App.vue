@@ -5,8 +5,8 @@ import HelloWorld from "./components/HelloWorld.vue";
 import { toggleTheme } from "@zougt/vite-plugin-theme-preprocessor/dist/browser-utils";
 import AButton from "ant-design-vue/es/button";
 
-import 'ant-design-vue/lib/button/style/index.less';
-import 'ant-design-vue/lib/message/style/index.less';
+import "ant-design-vue/lib/button/style/index.less";
+import "ant-design-vue/lib/message/style/index.less";
 
 const toggleBlueTheme = () => {
   toggleTheme({ scopeName: "blue" });
@@ -17,14 +17,16 @@ const toggleDarkBlueTheme = () => {
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  <button @click="toggleBlueTheme">皮肤切换为blue</button>
-  <button @click="toggleDarkBlueTheme">皮肤切换为dark-blue</button>
-  <p>
-    <a-button type="primary">antd button</a-button>
-    <a-button>antd button</a-button>
-  </p>
+  <div id="main">
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+    <button @click="toggleBlueTheme">皮肤切换为blue</button>
+    <button @click="toggleDarkBlueTheme">皮肤切换为dark-blue</button>
+    <p>
+      <a-button type="primary">antd button</a-button>
+      <a-button>antd button</a-button>
+    </p>
+  </div>
 </template>
 
 <style lang="less">
@@ -39,7 +41,17 @@ const toggleDarkBlueTheme = () => {
   // color: @color;
   color: @app-color;
   //text-shadow:@app-color-appless;
-  background-color:@app-color-appless ;
+  background-color: @app-color-appless;
   margin-top: 60px;
+}
+
+#main {
+  background-color: #ffc;
+}
+</style>
+
+<style lang="less" scoped>
+#main {
+  background-color: #ffd;
 }
 </style>
