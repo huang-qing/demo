@@ -7,7 +7,12 @@ declare module "*.vue" {
   export default component;
 }
 
-// declare module "@zougt/vite-plugin-theme-preprocessor/dist/browser-utils" {
-//   const toggleTheme: ({ scopeName: string }) => null;
-//   export { toggleTheme };
-// }
+declare module "@zougt/vite-plugin-theme-preprocessor/dist/browser-utils" {
+  type ICustomLinkHref = (href: string) => string;
+
+  const toggleTheme: ({
+    scopeName: string,
+    customLinkHref: ICustomLinkHref,
+  }) => null;
+  export { toggleTheme };
+}

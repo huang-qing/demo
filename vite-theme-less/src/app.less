@@ -1,7 +1,26 @@
 @app-color: #333aaa;
-@app-bg-color:#fff;
+@app-bg-color: #fff;
 
 #main {
-    background-color:#ffa;
+  background-color: #ffa;
+  // 同一个样式定义多次，在dev环境皮肤页面生成多次，prod环境会去重
+  font-size: @font-size-base;
 }
 
+// 在这里使用变量，dev环境生效，prod环境生效
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  // color: @color;
+  color: @app-color;
+  //text-shadow:@app-color-appless;
+  background-color: @app-bg-color;
+  padding: 3em;
+  border: 5px #fff solid;
+}
+
+//注释测试
+// #app {
+// }

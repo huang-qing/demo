@@ -1,7 +1,35 @@
-@app-color-appless: #fff234;
+@app-color-appless: #ffb;
 
 #main {
   //background-color: @app-bg-color;
   //background-color: @app-bg-color !important;
   background-color: #ffb;
+  font-size: @font-size-base;
+}
+
+#main {
+  background-color: @app-bg-color;
+}
+
+#app {
+  border: 5px #ff1 solid;
+}
+
+// 如果多个皮肤配置的@border-color都是一样的，这样不会添加皮肤前缀
+#app {
+  border: 5px @border-color solid;
+}
+
+// #app {
+//   border-color: @border-color;
+// }
+
+
+.btns {
+  font-size: @font-size-base;
+}
+
+
+.main .btns {
+  font-size: 20px;
 }

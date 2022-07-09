@@ -10,11 +10,11 @@ import { addThemeConfig } from "./build/theme-config";
 //import { env } from "process";
 
 const root = path.join(__dirname, "./src");
-const isDev=true;
+const isSampleViteConfig = false;
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
-  if(isDev){
+  if (isSampleViteConfig) {
     return getSampleViteConfig();
   }
   const env = loadEnv({ command, mode });
@@ -89,7 +89,21 @@ function getSampleViteConfig() {
             //"@app-bg-color": "#0dbc79",
           },
           // 最后的;号一定要写，否则会报错
-          additionalData: `@import "${root}/theme/app.less";`,
+          //additionalData: `@import "${root}/theme/app.less";`,
+          additionalData: (content, filePath) => {
+            // 更多可用的属性见 https://webpack.js.org/api/loaders/
+            //const { resourcePath, rootContext } = loaderContext;
+            //const relativePath = path.relative(rootContext, resourcePath);
+            debugger;
+            if (filePath === root.replace(/\\/g, "/") + "/app.less") {
+              console.log(filePath);
+              const less = `${content}  @import "./theme/app.less";`;
+              console.log(less);
+              return less;
+            }
+
+            return content;
+          },
           javascriptEnabled: true,
         },
       },

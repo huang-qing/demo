@@ -9,6 +9,7 @@ import colors from "colors";
 const ADDITIONALFILENAME = "app.less";
 const THEMEVARIABLESFILENAME = "variables.less";
 const PATHRESOLVETO = "../src/theme/";
+const uuid = `.${new Date().getTime()}`;
 
 type IThemeUserConfig = {
   env: IThemeEnvConfig;
@@ -81,15 +82,24 @@ const addCssAdditionalDataConfig = (
   themeConfig: IThemeConfig,
   userConfig: UserConfig
 ) => {
-  const additionalDataPath = path.join(
-    themeConfig.rootPath,
-    `./${ADDITIONALFILENAME}`
-  );
   const _config: UserConfig = {
     css: {
       preprocessorOptions: {
         less: {
-          additionalData: `@import "${additionalDataPath}";`,
+          additionalData: (content, filePath) => {
+            const srcAppLess =
+              path.resolve(themeConfig.rootPath, "..").replace(/\\/g, "/") +
+              "/app.less";
+            //console.log(srcAppLess);
+            if (filePath === srcAppLess) {
+              //console.log(filePath);
+              const _content = `${content} \n @import "./theme/app.less";`;
+              console.log(_content);
+              return _content;
+            }
+
+            return content;
+          },
           javascriptEnabled: true,
         },
       },
@@ -141,6 +151,7 @@ const addThemePreprocessorPluginConfig = (
         // 在生产模式是否抽取独立的主题css文件，extract为true以下属性有效
         // !!!【注意】这里必须是true
         extract: true,
+        customThemeCssFileName: (scopeName) => scopeName + uuid,
       },
     }),
   ];
