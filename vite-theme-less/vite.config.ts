@@ -91,14 +91,8 @@ function getSampleViteConfig() {
           // 最后的;号一定要写，否则会报错
           //additionalData: `@import "${root}/theme/app.less";`,
           additionalData: (content, filePath) => {
-            // 更多可用的属性见 https://webpack.js.org/api/loaders/
-            //const { resourcePath, rootContext } = loaderContext;
-            //const relativePath = path.relative(rootContext, resourcePath);
-            debugger;
             if (filePath === root.replace(/\\/g, "/") + "/app.less") {
-              console.log(filePath);
-              const less = `${content}  @import "./theme/app.less";`;
-              console.log(less);
+              const less = `${content} \n@import "./theme/app.less";`;
               return less;
             }
 

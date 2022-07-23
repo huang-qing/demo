@@ -1,7 +1,7 @@
 import { readdirSync } from "node:fs";
 import path from "node:path";
 import fs from "node:fs";
-import { UserConfig, PluginOption } from "vite";
+import type { UserConfig, PluginOption } from "vite";
 import { themePreprocessorPlugin } from "@zougt/vite-plugin-theme-preprocessor";
 import { defaultsDeep } from "lodash";
 import colors from "colors";
@@ -63,7 +63,6 @@ const loadConfig = (options: IThemeLoadConfigOptions) => {
     const stats = fs.statSync(themePath);
 
     if (stats.isDirectory()) {
-      //console.log(name);
       const dir = readdirSync(themePath);
       if (dir.includes(THEMEVARIABLESFILENAME)) {
         config.themesName.push(name);
@@ -90,11 +89,9 @@ const addCssAdditionalDataConfig = (
             const srcAppLess =
               path.resolve(themeConfig.rootPath, "..").replace(/\\/g, "/") +
               "/app.less";
-            //console.log(srcAppLess);
+
             if (filePath === srcAppLess) {
-              //console.log(filePath);
               const _content = `${content} \n @import "./theme/app.less";`;
-              console.log(_content);
               return _content;
             }
 
@@ -151,6 +148,7 @@ const addThemePreprocessorPluginConfig = (
         // 在生产模式是否抽取独立的主题css文件，extract为true以下属性有效
         // !!!【注意】这里必须是true
         extract: true,
+        removeCssScopeName: true,
         customThemeCssFileName: (scopeName) => scopeName + uuid,
       },
     }),
