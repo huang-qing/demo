@@ -7,19 +7,30 @@
       </p>
       <p><a-button>ant button</a-button></p>
       <p><a-date-picker></a-date-picker></p>
+      <p><HomeFilled /> <LayoutTwoTone /></p>
+      <p><AntdIconHome /></p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { debounce } from "lodash-es";
+import { throttle } from "lodash-es";
+import debounce from "lodash-es/debounce";
 import { reactive } from "vue";
 
-import AButton from "ant-design-vue/es/button";
-import "ant-design-vue/lib/button/style/css";
-import ADatePicker from "ant-design-vue/lib/date-picker"; // 加载 JS
-import "ant-design-vue/lib/date-picker/style/css";
-debugger;
+import "ant-design-vue/es/button/style/css";
+import "ant-design-vue/es/date-picker/style/css";
+//import AButton from "ant-design-vue/es/button";
+//import ADatePicker from "ant-design-vue/lib/date-picker"; // 加载 JS
+
+//import { Button as AButton } from "ant-design-vue";
+//import AButton from "ant-design-vue/es/button";
+import { Button as AButton, DatePicker as ADatePicker } from "ant-design-vue";
+
+import { HomeFilled, LayoutTwoTone } from "@ant-design/icons-vue";
+import { AntdIconHome } from "my-vue-components";
+//import HomeFilled from "@ant-design/icons-vue/HomeFilled";
+//import LayoutTwoTone from "@ant-design/icons-vue/LayoutTwoTone";
 // about.vue 注释测试
 console.log("about.vue console.log");
 
@@ -27,8 +38,17 @@ let i = 1;
 const obj = reactive({ name: "关于页面", description: "描述" });
 //const cloneObj = reactive(cloneDeep(obj));
 
-const click = debounce(() => {
+const click1 = debounce(() => {
   obj.name = "关于页面" + i++;
+}, 1000);
+
+const click2 = throttle(() => {
+  obj.name = "关于页面" + i++;
+}, 1000);
+
+const click = debounce(() => {
+  click1();
+  click2();
 }, 1000);
 </script>
 
