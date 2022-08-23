@@ -1,9 +1,9 @@
-import { UserConfigExport } from "vite";
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import path from "path";
+import { build } from "vite";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
-export default (): UserConfigExport => {
-  return {
+(async () => {
+  await build({
     plugins: [
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), "src/icons")],
@@ -21,5 +21,5 @@ export default (): UserConfigExport => {
       },
       outDir: "src/assets/svg-icons-register/",
     },
-  };
-};
+  });
+})();

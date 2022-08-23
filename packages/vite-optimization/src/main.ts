@@ -6,7 +6,7 @@ import App from "./App.vue";
 import router from "./router";
 
 import "./assets/main.css";
-import "./assets/svg-icons";
+import "./assets/svg-icons-register";
 
 import dayjs from "dayjs";
 import isLeapYear from "dayjs/plugin/isLeapYear"; // 导入插件
