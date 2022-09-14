@@ -17,20 +17,16 @@ export default {
 
 <script setup lang="ts" inherit-attrs="false">
 // inherit-attrs="false" 不生效
-import {
-  defineProps,
-  ref,
-  computed,
-  defineEmits,
-  defineExpose,
-  watchEffect,
-  watch,
-} from "vue";
+import { ref, computed, watchEffect, watch } from "vue";
 
 const props = defineProps<{
   modelValue: string;
   attrs: any;
 }>();
+// const props = defineProps({
+//   modelValue: String,
+//   attrs: Object as Record<string, any>,
+// });
 
 const emits = defineEmits(["update:modelValue", "update:attrs", "change"]);
 

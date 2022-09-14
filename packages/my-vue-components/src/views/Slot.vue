@@ -8,7 +8,7 @@ const select = Promise.resolve(Select);
 registerComponent("text", input);
 registerComponent("select", select);
 
-const data = ref([
+const data = ref<any[]>([
   {
     id: "item1",
     title: "title-item1",
@@ -30,7 +30,7 @@ const data = ref([
     events: {
       change: (value: string) => {
         console.log("item2 on change: " + value);
-        data.value[0].value=`cascade change from item2:${value}`;
+        data.value[0].value = `cascade change from item2:${value}`;
       },
     },
   },
@@ -55,24 +55,32 @@ const jsonData = computed(() => {
 });
 
 const onChangeValue = () => {
-  debugger;
+
   data.value.forEach((item, index) => {
-    debugger;
+   
     item.id = item.id + index;
     item.value = "value-demo-change" + index;
+    item.attrs.style = { width: "120px", "font-size": "12px" };
   });
   console.log("slot view value change");
 };
 </script>
 
 <template>
-  <SlotParent :data="data"></SlotParent>
-  <div>
-    <p>data:</p>
-    <pre>{{ jsonData }}</pre>
-  </div>
-  <div>
-    <button @click="onChangeValue">改变值</button>
+  <div class="wrap">
+    <div>
+      <SlotParent :data="data"></SlotParent>
+      <div>
+        <button @click="onChangeValue">view 改变值</button>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <p>data:</p>
+        <pre>{{ jsonData }}</pre>
+      </div>
+    </div>
   </div>
 </template>
 
