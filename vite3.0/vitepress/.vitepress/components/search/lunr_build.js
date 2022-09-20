@@ -3,14 +3,16 @@
 var path = require("path");
 var fs = require("fs");
 var lunr = require("lunr");
+require("./lunr.stemmer.support.js")(lunr);
+require("./lunr.zh.js")(lunr);
 var cheerio = require("cheerio");
 
 // Change these constants to suit your needs
 const HTML_FOLDER = ".vitepress/dist";
-const SEARCH_FIELDS = ["l0", "l1", "l2", "l3", "l4", "l5", "l6"];
+const SEARCH_FIELDS = ["l0", "l1", "l2", "l3", "l4", "l5", "l6", "d"];
 const EXCLUDE_FILES = [];
 const MAX_PREVIEW_CHARS = 128; // Number of characters to show for a given search result
-const OUTPUT_INDEX = "components/search/lunr_index.js"; // Index file
+const OUTPUT_INDEX = ".vitepress/components/search/lunr_index.js"; // Index file
 
 function isHtml(filename) {
   lower = filename.toLowerCase();
@@ -75,6 +77,7 @@ function parseHtmlForEntries(folder, file, fileId) {
   let idx = 0;
   const entries = [];
   const h1 = parseHeading($("h1")) || { t: title, a: "" };
+
   if (h1 && h1.t) {
     entries.push({
       id: `${fileId}-${idx++}`,
@@ -152,6 +155,7 @@ function parseHtmlForEntries(folder, file, fileId) {
 
 function buildIndex(docs) {
   var idx = lunr(function () {
+    this.use(lunr.zh);
     this.ref("id");
     for (var i = 0; i < SEARCH_FIELDS.length; i++) {
       this.field(SEARCH_FIELDS[i]);

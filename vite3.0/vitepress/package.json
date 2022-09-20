@@ -5,20 +5,29 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:serve": "vitepress serve",
-    "lunr-index-build": "node ./components/search/lunr_build.js"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "serve": "vitepress serve",
+    "lunr-index-build": "npm run build && npm run lunr-index-build-only",
+    "lunr-index-build-only":"node ./.vitepress/components/search/lunr_build.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lunr": "^2.3.9"
+    "@docsearch/js":"^3.2.1",
+    "@docsearch/css": "^3.2.1",
+    "@node-rs/jieba": "^1.6.1",
+    "lunr": "^2.3.9",
+    "lunr-languages": "^1.9.0",
+    "vue": "^3.2.39"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.14",
-    "vue": "^3.2.39",
-    "@docsearch/css": "^3.2.1",
-    "cheerio": "^1.0.0-rc.12"
+    "@types/markdown-it": "^12.2.3",
+    "@types/node": "^16.9.1",
+    "@vue/theme": "^1.2.2",
+    "cheerio": "^1.0.0-rc.12",
+    "terser": "^5.14.2",
+    "vite": "^2.9.13",
+    "vitepress": "1.0.0-alpha.14"
   }
 }

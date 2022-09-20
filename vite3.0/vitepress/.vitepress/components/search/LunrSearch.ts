@@ -37,6 +37,7 @@ export function lunrsearch(props: DocSearchProps): void {
                     ]
                 };
                 if (query.length > 0) {
+                    debugger;
                     var idx = lunr.Index.load(LUNR_DATA);
                     var searchResults = idx.search(query + "*");
                     response.results[0].nbHits = searchResults.length;
