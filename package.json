@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/huang-qing/demo/issues"
   },
-  "homepage": "https://github.com/huang-qing/demo#readme"
+  "homepage": "https://github.com/huang-qing/demo#readme",
+  "dependencies": {
+    "monaco-editor": "^0.34.0"
+  }
 }

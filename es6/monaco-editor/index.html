@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>monaco editor</title>
+    <style>
+      html,
+      body,
+      #container {
+        height: 99%;
+      }
+    </style>
+    <script src="./libs/monaco-editor/min/vs/loader.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    let editor;
+    require.config({
+      paths: { vs: window.location.origin + "/libs/monaco-editor/min/vs" },
+    });
+    window.MonacoEnvironment = { getWorkerUrl: () => proxy };
+
+    let proxy = URL.createObjectURL(
+      new Blob(
+        [
+          `
+    		self.MonacoEnvironment = {
+    			baseUrl: '${window.location.origin}/libs/monaco-editor/min/'
+    		};
+    		importScripts('${window.location.origin}/libs/monaco-editor/min/vs/base/worker/workerMain.js');
+    	`,
+        ],
+        { type: "text/javascript" }
+      )
+    );
+
+    require(["vs/editor/editor.main"], function () {
+      editor = monaco.editor.create(document.getElementById("container"), {
+        value: document.querySelector("html").innerHTML,
+        language: "html",
+        // vs vs-dark hc-black
+        theme: "vs",
+        // 隐藏编辑器右边得代码缩图
+        minimap: { enabled: false },
+      });
+    });
+
+    function getValue() {
+      return editor.getModel().getValue();
+    }
+
+    function setValue(source) {
+      editor.getModel().setValue(source);
+    }
+
+    // monaco-editor 默认不支持格式化css代码。需要借助其他方式 Beautify.js 来格式化代码，获取value，然后格式化value，再重新设置
+  </script>
+</html>
