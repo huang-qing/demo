@@ -1,0 +1,22 @@
+{
+  "name": "npm",
+  "version": "3.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tarball": "node --experimental-json-modules ./bin/tarball.js"
+  },
+  "bin": {
+    "tarball": "./bin/tarball.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.0",
+    "lodash-es": "file:libs\\lodash-es-4.17.21.tgz",
+    "dayjs": "file:libs\\dayjs-1.11.3.tgz"
+  }
+}
