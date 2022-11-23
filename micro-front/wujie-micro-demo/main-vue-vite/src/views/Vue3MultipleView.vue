@@ -3,26 +3,32 @@
   <WujieVue
     width="100%"
     height="100%"
-    :name="name"
+    name="vue3-multiple-1"
     url="http://localhost:8001/"
     :sync="sync"
     :alive="alive"
-    :props="{jump}"
+  ></WujieVue>
+  
+  <WujieVue
+    width="100%"
+    height="100%"
+    name="vue3-multiple-2"
+    url="http://localhost:8001/"
+    :sync="sync"
+    :alive="alive"
+  ></WujieVue>
+
+  <WujieVue
+    width="100%"
+    height="100%"
+    name="vue3-multiple-3"
+    url="http://localhost:8001/"
+    :sync="sync"
+    :alive="alive"
   ></WujieVue>
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView, useRouter } from "vue-router";
-const router = useRouter();
-const props = defineProps({
-  id: String,
-});
-
 const sync = true;
 const alive = true;
-const name = "vue3" + (props.id || "");
-
-const jump = (location:string) => {
-  router.push(location);
-};
 </script>

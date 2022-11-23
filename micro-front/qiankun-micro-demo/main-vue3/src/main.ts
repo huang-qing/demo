@@ -59,6 +59,14 @@ registerMicroApps(
       activeRule: "/vue3-vite-about",
       props: state,
     },
+    {
+      name: "icpx",
+      // 跳转到子应用的about路由
+      entry: "//localhost:4173",
+      container: "#subapp-viewport",
+      activeRule: "/icpx",
+      props: state,
+    },
   ],
   {
     // qiankun 生命周期钩子 - 微应用加载前
@@ -91,3 +99,5 @@ setTimeout(function () {
   state.timestamp = 111111;
   actions.setGlobalState(state);
 }, 2000);
+
+window.__qiankun_main_vue3 = "__qiankun_main_vue3";

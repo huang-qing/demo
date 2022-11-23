@@ -3,25 +3,25 @@
   <WujieVue
     width="100%"
     height="100%"
-    :name="name"
-    url="http://localhost:8001/"
+    name="vue3About"
+    url="http://localhost:8001/about"
     :sync="sync"
     :alive="alive"
     :props="{jump}"
+    :prefix="{
+    }"
   ></WujieVue>
 </template>
 
 <script setup lang="ts">
 import { RouterLink, RouterView, useRouter } from "vue-router";
-const router = useRouter();
 const props = defineProps({
   id: String,
 });
 
 const sync = true;
 const alive = true;
-const name = "vue3" + (props.id || "");
-
+const router = useRouter();
 const jump = (location:string) => {
   router.push(location);
 };

@@ -3,6 +3,16 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from "./components/HelloWorld.vue";
 import { RouterLink, RouterView } from "vue-router";
+
+function handleJump() {
+  debugger;
+  window.$wujie?.props.jump({ path: "/react" });
+}
+
+function handleJumpToVue3ToAbout() {
+  debugger;
+  window.$wujie?.props.jump({ path: "/vue3", query: { vue3: "/about" } });
+}
 </script>
 
 <template>
@@ -20,6 +30,8 @@ import { RouterLink, RouterView } from "vue-router";
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
+      <a @click="handleJump">jump to react</a>
+      <a @click="handleJumpToVue3ToAbout">jump to vue3/about</a>
     </nav>
   </div>
 
@@ -58,6 +70,7 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
+  cursor: pointer;
 }
 
 nav a:first-of-type {

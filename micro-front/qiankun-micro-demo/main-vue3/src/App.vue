@@ -25,6 +25,7 @@ function push(subapp: string) {
         <RouterLink to="/purehtml">Pure Html</RouterLink>
         <RouterLink to="/vue3-vite">Vue3 Vite</RouterLink>
         <RouterLink to="/vue3-vite/about">Vue3 Vite About</RouterLink>
+        <RouterLink to="/icpx">icpx port:4173</RouterLink>
         <!-- <RouterLink to="/vue3-vitee">Vue3 Vitee</RouterLink> -->
       </nav>
     </div>

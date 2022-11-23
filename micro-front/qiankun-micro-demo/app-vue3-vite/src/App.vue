@@ -3,6 +3,8 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from "./components/HelloWorld.vue";
 import { RouterLink, RouterView } from "vue-router";
+debugger;
+console.log(window.wangEditor)
 </script>
 
 <template>
