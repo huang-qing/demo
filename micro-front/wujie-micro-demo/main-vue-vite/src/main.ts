@@ -5,6 +5,7 @@ import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import App from "./App.vue";
 import router from "./router";
+import lifecycles from "./lifecycle";
 
 import "./assets/main.css";
 
@@ -31,3 +32,33 @@ bus.$on("sub-route-change", (name: string, path: string) => {
   // //router.replace({ path: mainPath });
   // window.history.replaceState(null, null, mainPath);
 });
+
+// 预加载设置
+
+setupApp({
+  name: "vue3-no-alive",
+  url: "http://localhost:8001/",
+  exec: true,
+  //props,
+  ...lifecycles,
+});
+
+setupApp({
+  name: "react",
+  url: "http://localhost:8002/",
+  exec: true,
+  //props,
+  ...lifecycles,
+});
+
+preloadApp({
+  name: "vue3-no-alive",
+  url: "http://localhost:8001/",
+});
+
+
+preloadApp({
+  name: "react",
+  url: "http://localhost:8002/",
+});
+

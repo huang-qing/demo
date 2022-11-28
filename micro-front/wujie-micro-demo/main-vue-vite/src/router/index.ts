@@ -6,6 +6,7 @@ const Vue3MultipleView = () => import("../views/Vue3MultipleView.vue");
 const ReactView = () => import("../views/ReactView.vue");
 const AllAppView = () => import("../views/Multiple.vue");
 const Vue3AboutView= () => import("../views/Vue3AboutView.vue");
+const Vue3ViewWithNoKeepAlive= () => import("../views/Vue3ViewWithNoKeepAlive.vue");
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,9 +30,16 @@ const router = createRouter({
       props: true,
       component: Vue3View,
     },
+    
     {
-      path: "/vue3About",
-      name: "vue3About",
+      path: "/vue3-no-alive",
+      name: "vue3-no-alive",
+      props: true,
+      component: Vue3ViewWithNoKeepAlive,
+    },
+    {
+      path: "/vue3-about",
+      name: "vue3-about",
       props: true,
       component: Vue3AboutView,
     },

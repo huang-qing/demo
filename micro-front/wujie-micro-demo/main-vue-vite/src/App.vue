@@ -24,8 +24,9 @@ const onDestroyVue3View = () => {
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/vue3-no-alive">Vue3(预加载)</RouterLink>
         <RouterLink to="/vue3">Vue3(alive)</RouterLink>
-        <RouterLink to="/vue3About">Vue3 About(alive)</RouterLink>
+        <RouterLink to="/vue3-about">Vue3 About(alive)</RouterLink>
         <el-button type="danger" size="small" @click="onDestroyVue3View"
           >销毁Vue3View</el-button
         >

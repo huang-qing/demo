@@ -30,6 +30,7 @@ renderWithQiankun({
     console.log("vue3-vite bootstrap");
   },
   mount(props: QiankunProps) {
+    //window.qiankunWindow = qiankunWindow;
     props.onGlobalStateChange((state: any, prev: any) => {
       debugger;
       // state: 变更后的状态; prev 变更前的状态

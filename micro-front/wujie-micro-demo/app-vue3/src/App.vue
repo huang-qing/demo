@@ -1,8 +1,13 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+
+import { defineAsyncComponent } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import LibHelloWorld from "libs/LibHelloWorld";
 import { RouterLink, RouterView } from "vue-router";
+
+//const LibHelloWorld = defineAsyncComponent(() => import("libs/LibHelloWorld"));
 
 function handleJump() {
   debugger;
@@ -11,11 +16,19 @@ function handleJump() {
 
 function handleJumpToVue3ToAbout() {
   debugger;
+  // 跳转的子应用是保活应用并且没有被打开过
   window.$wujie?.props.jump({ path: "/vue3", query: { vue3: "/about" } });
+
+  //子应用 B 已经实例化
+  window.$wujie?.bus.$emit("routeChange", {
+    subApp: "vue3",
+    path: "/about",
+  });
 }
 </script>
 
 <template>
+  <LibHelloWorld />
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -36,6 +49,7 @@ function handleJumpToVue3ToAbout() {
   </div>
 
   <RouterView />
+
 </template>
 
 <style scoped>

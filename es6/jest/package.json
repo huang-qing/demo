@@ -5,7 +5,8 @@
   "main": "sum.js",
   "scripts": {
     "test": "jest",
-    "jest:init": "jest --init"
+    "jest:init": "jest --init",
+    "jest:watchAll":"jest --watchAll"
   },
   "author": "",
   "license": "ISC",

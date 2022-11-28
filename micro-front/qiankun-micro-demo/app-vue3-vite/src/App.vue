@@ -3,8 +3,21 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from "./components/HelloWorld.vue";
 import { RouterLink, RouterView } from "vue-router";
+import { qiankunWindow } from "vite-plugin-qiankun/dist/helper";
+import wangEditor2 from "@wangeditor/editor";
+
+
+// debugger;
+if(qiankunWindow.__POWERED_BY_QIANKUN__){
+  console.log("wangEditor1:" ,qiankunWindow.wangEditor)
+  console.log("wangEditor2:", wangEditor2);
+}
+else{
+  console.log("wangEditor1:",window.wangEditor)
+  console.log("wangEditor2:", wangEditor2);
+}
 debugger;
-console.log(window.wangEditor)
+
 </script>
 
 <template>
