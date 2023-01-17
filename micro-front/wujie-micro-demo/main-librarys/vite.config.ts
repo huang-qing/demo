@@ -18,16 +18,17 @@ export default defineConfig({
       shared: ["vue"],
     }),
   ],
-  // build: {
-  //   target: "esnext",
-  //   minify: false,
-  //   cssCodeSplit: true,
-  //   rollupOptions: {
-  //     // sharedPlugin need input required
-  //     // input:{},
-  //     output: {
-  //       minifyInternalExports: false,
-  //     },
-  //   },
-  // },
+  build: {
+    // target: "esnext",
+    // minify: false,
+    // cssCodeSplit: false,
+    rollupOptions: {
+      // sharedPlugin need input required
+      // input:{},
+      output: {
+        minifyInternalExports: false,
+      },
+    },
+    cssCodeSplit: true,
+  },
 });

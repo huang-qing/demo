@@ -1,4 +1,6 @@
 
+[![codecov](https://codecov.io/github/huang-qing/demo/branch/master/graph/badge.svg?token=5IC7QTQJJM)](https://codecov.io/github/huang-qing/demo)
+
 ```bash
 npm install --save-dev jest
 npx jest --init
