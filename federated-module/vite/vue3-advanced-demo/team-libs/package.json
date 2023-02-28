@@ -1,20 +1,23 @@
 {
-  "name": "team-green",
+  "name": "team-blue",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5003 --strictPort --host",
+    "dev": "vite --port 4001 --strictPort --host",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview --port 5003 --strictPort --host",
+    "serve": "vite preview --port 4001 --strictPort --host",
     "clean": "rm -rf dist",
-    "stop": "kill-port --port 5003"
+    "stop": "kill-port --port 4001"
   },
   "dependencies": {
+    "element-plus": "^2.2.15",
     "vue": "^3.2.37",
+    "vue-router": "^4.1.5",
     "pinia": "^2.0.21"
   },
   "devDependencies": {
+    "unplugin-element-plus": "0.4.1",
     "@vitejs/plugin-vue": "^3.0.3",
     "typescript": "^4.6.4",
     "vite": "^3.0.7",

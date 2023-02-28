@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { allRecommendations } from '../recos'
+import { allRecommendations } from '../recos-2'
 import { currentItemStore } from '../store'
 
 const recommendations = ref<Array<{ image: string; id: string }>>([])

@@ -4,8 +4,10 @@
     width="100%"
     height="100%"
     name="react"
-    url="http://localhost:8002/"
+    url="app-react/"
     :sync="true"
     alive="true"
   ></WujieVue>
+
+  <!-- url="http://localhost:8002/" -->
 </template>

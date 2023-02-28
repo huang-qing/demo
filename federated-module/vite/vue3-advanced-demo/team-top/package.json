@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5000 --strictPort",
+    "dev": "vite --port 5000 --strictPort --host",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview --port 5000 --strictPort",
+    "serve": "vite preview --port 5000 --strictPort --host",
     "clean": "rm -rf dist",
     "stop": "kill-port --port 5000"
   },

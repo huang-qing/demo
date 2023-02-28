@@ -17,6 +17,7 @@ export default defineConfig({
       shared: ['vue', 'pinia']
     })
   ],
+  //指定固定的ip地址，用于recos静态图片的加载
   base: 'http://127.0.0.1:5003',
   build: {
     minify: false,
