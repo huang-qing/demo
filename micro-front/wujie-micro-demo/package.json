@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:react":"cd app-react && npm run dev",
     "dev:vue3":"cd app-vue3 && npm run dev",
+    "dev:vue3-nest":"cd app-vue3-nest && npm run dev",
     "dev:lib":"cd main-librarys && npm run preview",
     "dev:main":"cd main-vue-vite && npm run dev",
     "dev":"npm-run-all --parallel dev:*"

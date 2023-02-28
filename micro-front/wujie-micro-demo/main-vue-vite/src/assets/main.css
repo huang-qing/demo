@@ -1,4 +1,6 @@
 @import "./base.css";
+/* @import "./Font-Awesome-4.7.0/css/font-awesome.css"; */
+
 
 #app {
   max-width: 1280px;
@@ -33,3 +35,45 @@ a,
     padding: 0 2rem;
   }
 }
+
+
+/* 测试字体图标 */
+
+/* @font-face {
+  font-family: 'iconfont';
+  src: url('font_hc44x52my2/iconfont.ttf?t=1677550394272') format('truetype');
+} */
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 22px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-glass:before {
+  content: "\f000";
+}
+.fa-music:before {
+  content: "\f001";
+}
+.fa-search:before {
+  content: "\f002";
+}
+
+
+
+
+

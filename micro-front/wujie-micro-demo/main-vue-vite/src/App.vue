@@ -21,6 +21,19 @@ const onDestroyVue3View = () => {
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
+      <div>
+        iconfon字体图标
+        <span class="iconfont">&#xe6eb;</span>
+        <span class="iconfont">&#xe6f3;</span>
+      </div>
+
+      <div>
+        fontawesome字体图标
+        <span class="fa fa-glass">&#xf007;</span>
+        <span class="fa fa-music"></span>
+      </div>
+
+
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>

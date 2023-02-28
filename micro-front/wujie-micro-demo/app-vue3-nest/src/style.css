@@ -1,4 +1,4 @@
-/* @import "./assets/Font-Awesome-4.7.0/css/font-awesome.css"; */
+@import "./assets/Font-Awesome-4.7.0/css/font-awesome.css";
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -31,7 +31,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 h1 {
