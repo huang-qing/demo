@@ -10,12 +10,12 @@ import { RouterLink, RouterView } from "vue-router";
 //const LibHelloWorld = defineAsyncComponent(() => import("libs/LibHelloWorld"));
 
 function handleJump() {
-  debugger;
+  //debugger;
   window.$wujie?.props.jump({ path: "/react" });
 }
 
 function handleJumpToVue3ToAbout() {
-  debugger;
+  //debugger;
   // 跳转的子应用是保活应用并且没有被打开过
   window.$wujie?.props.jump({ path: "/vue3", query: { vue3: "/about" } });
 
@@ -25,6 +25,8 @@ function handleJumpToVue3ToAbout() {
     path: "/about",
   });
 }
+
+const storageString=JSON.stringify( window.__WUJIE_RAW_WINDOW__.localStorage);
 </script>
 
 <template>
@@ -53,9 +55,15 @@ function handleJumpToVue3ToAbout() {
       <span class="fa fa-music"></span>
     </div>
 
+    <div>
+      <h3>localStorage</h3>
+      {{storageString}}
+    </div>
+
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/other">Other</RouterLink>
       <a @click="handleJump">jump to react</a>
       <a @click="handleJumpToVue3ToAbout">jump to vue3/about</a>
     </nav>

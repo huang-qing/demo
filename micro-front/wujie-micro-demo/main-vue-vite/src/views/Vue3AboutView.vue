@@ -19,7 +19,7 @@ const props = defineProps({
   id: String,
 });
 
-const sync = true;
+const sync = false;
 const alive = true;
 const router = useRouter();
 const jump = (location:string) => {

@@ -1,0 +1,1 @@
+import{d as n,o as u,c as r,u as a,a as p}from"./index.ebc58b05.js";const h=n({__name:"Vue3AboutView",props:{id:String},setup(c){const o=a(),t=e=>{o.push(e)};return(e,_)=>{const s=p("WujieVue");return u(),r(s,{width:"100%",height:"100%",name:"vue3-about",url:"http://localhost:8001/about",sync:!1,alive:!0,props:{jump:t},prefix:{}},null,8,["props"])}}});export{h as default};

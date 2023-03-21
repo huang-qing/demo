@@ -5,7 +5,7 @@
     height="100%"
     name="react"
     url="app-react/"
-    :sync="true"
+    :sync="false"
     alive="true"
   ></WujieVue>
 

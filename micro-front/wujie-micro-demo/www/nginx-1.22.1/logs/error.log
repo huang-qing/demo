@@ -1,0 +1,1 @@
+2023/03/10 13:00:04 [error] 23#23: *1 open() "/usr/share/nginx/html/vue3" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /vue3 HTTP/1.1", host: "localhost:8080"

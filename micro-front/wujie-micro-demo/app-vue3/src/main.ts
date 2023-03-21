@@ -58,15 +58,35 @@ declare global {
   }
 }
 
+// 注释此代码，尝试在主应用中注入监听,不可行
 router.afterEach((to, from, failure) => {
-  debugger;
+  //debugger;
+  let isReturn = false;
+  if (to.fullPath === from.fullPath || isReturn) {
+    return;
+  }
   window.$wujie?.bus.$emit("sub-route-change", "vue3", to.path);
 });
 
+// router.beforeEach((to, from) => {
+//   // ...
+//   // 返回 false 以取消导航
+//   debugger;
+//   window.$wujie;
+//   return false
+// })
+
 //子应用之间的路由跳转
 window.$wujie?.bus.$on("routeChange", ({ subApp, path }: any) => {
-  debugger;
+  //debugger;
   if (subApp === "vue3") {
     router.push({ path });
   }
 });
+
+if(window.$wujie){
+  window.localStorage.setItem("app-vue3-wujue","app-vue3-wujue");
+  debugger;
+  window.__WUJIE_RAW_WINDOW__.localStorage.setItem("app-vue3-wujue-raw-window","app-vue3-wujue-raw-window");
+ 
+}

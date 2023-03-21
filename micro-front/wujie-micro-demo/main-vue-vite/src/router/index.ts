@@ -5,8 +5,9 @@ const Vue3View = () => import("../views/Vue3View.vue");
 const Vue3MultipleView = () => import("../views/Vue3MultipleView.vue");
 const ReactView = () => import("../views/ReactView.vue");
 const AllAppView = () => import("../views/Multiple.vue");
-const Vue3AboutView= () => import("../views/Vue3AboutView.vue");
-const Vue3ViewWithNoKeepAlive= () => import("../views/Vue3ViewWithNoKeepAlive.vue");
+const Vue3AboutView = () => import("../views/Vue3AboutView.vue");
+const Vue3ViewWithNoKeepAlive = () =>
+  import("../views/Vue3ViewWithNoKeepAlive.vue");
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,13 +25,32 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/AboutView.vue"),
     },
+    // {
+    //   path: "/vue3/",
+    //   name: "vue3",
+    //   props: true,
+    //   component: Vue3View,
+    // },
+    // {
+    //   path: "/vue3/:path?",
+    //   name: "vue3-path",
+    //   props: true,
+    //   component: Vue3View,
+    // },
     {
-      path: "/vue3",
-      name: "vue3",
+      path: "/vue3/message",
+      name: "vue3message",
+      props: true,
+      meta:{},
+      component: Vue3View,
+    },
+    {
+      path: "/vue3/:path(.*)?",
+      name: "vue3-full-path",
       props: true,
       component: Vue3View,
     },
-    
+
     {
       path: "/vue3-no-alive",
       name: "vue3-no-alive",

@@ -4,25 +4,29 @@
     width="100%"
     height="100%"
     :name="name"
-    url="http://localhost:8001/"
+    :url="url"
     :sync="sync"
     :alive="alive"
-    :props="{jump}"
+    :props="{ jump }"
   ></WujieVue>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import { RouterLink, RouterView, useRouter } from "vue-router";
 const router = useRouter();
 const props = defineProps({
   id: String,
+  path: String,
 });
 
-const sync = true;
+//debugger;
+const sync = false;
 const alive = true;
 const name = "vue3" + (props.id || "");
+const url = ref(`http://localhost:8001/${props.path||''}`);
 
-const jump = (location:string) => {
+const jump = (location: string) => {
   router.push(location);
 };
 </script>

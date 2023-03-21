@@ -57,13 +57,13 @@ declare global {
 }
 
 router.afterEach((to, from, failure) => {
-  debugger;
-  window.$wujie?.bus.$emit("sub-route-change", "vue3", to.path);
+  //debugger;
+  //window.$wujie?.bus.$emit("sub-route-change", "vue3", to.path);
 });
 
 //子应用之间的路由跳转
 window.$wujie?.bus.$on("routeChange", ({ subApp, path }: any) => {
-  debugger;
+  //debugger;
   if (subApp === "vue3") {
     router.push({ path });
   }
