@@ -1,0 +1,32 @@
+{
+  "name": "post-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postcss-to-dist-nouse-posscssconfig": "postcss style.css -o dist.css -u autoprefixer",
+    "postcss-to-dist": "postcss style.css -o dist.css -w"
+  },
+  "browserslist": [
+    "cover 99.5%"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.0",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-mixins": "^9.0.4",
+    "postcss-preset-env": "^8.3.1",
+    "postcss-pxtorem": "^6.0.0",
+    "stylelint": "^15.4.0",
+    "stylelint-config-standard": "^32.0.0"
+  },
+  "dependencies": {
+    "reset.css": "^2.0.2"
+  }
+}

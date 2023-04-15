@@ -1,0 +1,60 @@
+/* 
+必须使用 @import "reset.css";
+使用 @import ("reset.css"); 这种方式postcss-import插件无效
+*/
+@import "reset.css";
+
+/* @import "./mixins/mixin.css"; */
+
+
+@mixin icon twitter {
+  background: url twt.png;
+}
+@mixin icon youtube, red {
+  background: url youtube.png;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+main {
+  font-size: 24px;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  background: hsl(220deg, 10%, 5%);
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    156deg,
+    rgba(0, 13, 168, 1) 0%,
+    rgba(255, 0, 239, 1) 100%
+  );
+  border-radius: 8px;
+  box-shadow: 0 0 48px rgba(255, 0, 239, 0.2);
+
+  &:hover {
+    background: linear-gradient(
+      156deg,
+      rgba(255 0 239 100%) 0%,
+      rgba(0 13 168 100%) 100%
+    );
+  }
+}
