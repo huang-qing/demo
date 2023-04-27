@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.btn {
+  background-color: theme('colors.blue.500');
+  padding: theme('spacing.1') theme('spacing.4');
+  color: theme('colors.white');
+  border: 2px solid theme('colors.blue.800');
+}
