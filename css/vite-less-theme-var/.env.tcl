@@ -1,0 +1,2 @@
+VITE_ENV_TCL=true
+VITE_ENV_THEME_DEFAULT='dark-blue'

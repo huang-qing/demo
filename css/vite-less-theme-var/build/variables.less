@@ -1,0 +1,64 @@
+@import "ant-design-vue/lib/style/themes/default.less";
+
+// // 测试fade
+// :root {
+//   --primary-color: red;
+// }
+// @primary-color: var(--primary-color);
+// @primary-color-outline: fade(red, 20%);
+// @primary-color-outline: fade(@primary-color, @outline-fade);
+
+// // 测试:覆盖less方法 - 无效
+// .fade(@name,@px) {
+//   @{name}: @px;
+// }
+
+// // 测试：使用 var 设置btn字体的主色
+// // 测试：~ less 转义（Escaping）允许你使用任意字符串作为属性或变量值。
+// // 任何 ~"anything" 或 ~'anything' 形式的内容都将按原样输出
+// :root {
+//   --btn-primary-color: red;
+// }
+//@btn-color: var(--btn-primary-color);
+//@btn-primary-color: #fff;
+//@btn-primary-color: var(--ant-btn-primary-color);
+//@btn-primary-color: red;
+//@btn-primary-color: @primary-color;
+//@btn-primary-color: ~"fade(@btn-color, @outline-fade)";
+//@btn-primary-color: ~"fade(--btn-primary-color, @outline-fade)"; //无效
+//@btn-primary-color: fade(red, 100);
+//@btn-primary-color: fade2();
+//@btn-primary-color: ~"fade(red, 100)"; //无效
+
+// // 测试：使用rgba实现字体的透明度
+// //--btn-color: rgba(255, 0, 0, 0.3);
+// :root {
+//   --btn-color: 255, 0, 0;
+// }
+// // 测试：css var可以使用此方式进行拼接
+// @btn-primary-color: rgba(var(--btn-color), 0.8);
+
+// 测试: 使用var 替换 buttons bg
+// 使用到了less的fade lighten colorPalette等函数，需要固定的色值
+// 需要一种方式替换less fade tint的方法，可以使用css3 var
+// 使用插件整体替换
+// :root {
+//   --primary-color-rgb: 229, 64, 50;
+// }
+// @primary-color: rgba(var(--primary-color-rgb));
+// @primary-color-outline: rgba(var(--primary-color-rgb), 0.8);
+
+// 测试: 使用var 替换 buttons primary color 测试fade
+// :root {
+//   --primary-color-rgb: 229, 64, 50;
+//   --primary-color: rgba(var(--primary-color-rgb), 1);
+// }
+// @primary-color-test: var(--primary-color);
+
+// //@btn-primary-color: fade(@primary-color-test, @outline-fade);
+// // 可以使用~让less编译不报错
+// @btn-primary-color: ~'fade(@primary-color-test, @outline-fade)';
+// @btn-primary-color: @primary-color-test;
+
+// 测试： vite.config.ts less functions 配置：不生效
+//@btn-primary-color: fade2();

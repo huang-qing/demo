@@ -1,0 +1,18 @@
+@import "ant-design-vue/lib/style/themes/default.less";
+// 测试vite插件：加载@import导入的文件 ，经测试无法在hook中访问到less中由@import导入的less文件
+//@import "./test-import.less";
+
+//@btn-primary-color: red;
+
+:root {
+  --app-color: orange;
+  --app-background-color: gray;
+  --ant-btn-primary-color: #fff;
+}
+
+:root {
+  --app-color: red;
+}
+
+//@btn-primary-color: red;
+//@btn-primary-color: var(--ant-btn-primary-color);
