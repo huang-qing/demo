@@ -1,0 +1,1 @@
+import{_ as o,o as c,c as a,a as r}from"./index.0a5aa438.js";const t={};function n(s,_){const e=r("WujieVue");return c(),a(e,{width:"100%",height:"100%",name:"react-proxy1",url:"module/app-react-proxy",sync:!1,alive:"false"})}const i=o(t,[["render",n]]);export{i as default};

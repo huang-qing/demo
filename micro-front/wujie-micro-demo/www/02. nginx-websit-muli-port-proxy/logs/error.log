@@ -1,0 +1,64 @@
+2023/03/10 13:00:04 [error] 23#23: *1 open() "/usr/share/nginx/html/vue3" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /vue3 HTTP/1.1", host: "localhost:8080"
+2023/05/23 11:38:15 [error] 15052#19536: *1 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: localhost, request: "GET /index.html HTTP/1.1", host: "127.0.0.1:8080"
+2023/05/23 11:38:20 [error] 15052#19536: *2 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.1:8080"
+2023/05/23 11:42:47 [notice] 20696#17952: signal process started
+2023/05/23 11:46:57 [notice] 588#21384: signal process started
+2023/05/23 11:47:15 [error] 11708#20756: *6 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 11:47:15 [error] 11708#20756: *7 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:47:20 [error] 11708#20756: *8 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:49:40 [error] 11708#20756: *10 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:49:41 [error] 11708#20756: *11 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 11:49:41 [error] 11708#20756: *12 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:50:06 [notice] 23272#22860: signal process started
+2023/05/23 11:50:08 [error] 2304#10156: *13 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 11:50:08 [error] 2304#10156: *14 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:50:09 [error] 2304#10156: *15 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 11:50:09 [error] 2304#10156: *16 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:50:31 [notice] 14328#19884: signal process started
+2023/05/23 11:50:39 [error] 2304#10156: *19 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 11:50:39 [error] 22708#14252: *20 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:50:40 [error] 22708#14252: *21 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 11:50:40 [error] 22708#14252: *22 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:50:40 [error] 22708#14252: *23 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 11:50:40 [error] 22708#14252: *24 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:50:41 [error] 22708#14252: *25 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 11:50:41 [error] 22708#14252: *26 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 11:50:41 [error] 22708#14252: *27 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 11:50:41 [error] 22708#14252: *28 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 13:40:55 [error] 22708#14252: *29 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 13:40:55 [error] 22708#14252: *30 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 13:40:56 [error] 22708#14252: *31 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 13:40:56 [error] 22708#14252: *32 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 13:41:19 [notice] 14576#3004: signal process started
+2023/05/23 13:42:01 [notice] 22844#19616: signal process started
+2023/05/23 13:55:00 [notice] 18172#14660: signal process started
+2023/05/23 14:14:07 [notice] 17220#16292: signal process started
+2023/05/23 14:15:49 [notice] 21520#19560: signal process started
+2023/05/23 14:15:58 [notice] 21908#11628: signal process started
+2023/05/23 15:24:14 [notice] 588#22740: signal process started
+2023/05/23 15:27:21 [notice] 23620#9064: signal process started
+2023/05/23 15:29:36 [notice] 24108#5608: signal process started
+2023/05/23 15:30:46 [notice] 12920#21824: signal process started
+2023/05/23 15:31:02 [error] 19520#13112: *84 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/assets/index.3fce1f81.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /assets/index.3fce1f81.css HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/react-proxy"
+2023/05/23 15:31:02 [error] 19520#13112: *84 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/assets/index.e06f7c8c.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /assets/index.e06f7c8c.js HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/module/app-react-proxy"
+2023/05/23 15:33:16 [error] 19520#13112: *90 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/react-proxy" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /react-proxy HTTP/1.1", host: "127.0.0.1:8080"
+2023/05/23 15:33:40 [error] 19520#13112: *90 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/react-proxy" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /react-proxy HTTP/1.1", host: "127.0.0.1:8080"
+2023/05/23 15:34:43 [error] 19520#13112: *90 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/assets/index.3fce1f81.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /assets/index.3fce1f81.css HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/react-proxy"
+2023/05/23 15:34:43 [error] 19520#13112: *90 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/assets/index.e06f7c8c.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /assets/index.e06f7c8c.js HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/module/app-react-proxy"
+2023/05/23 15:39:00 [error] 19520#13112: *98 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/react-proxy" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /react-proxy HTTP/1.1", host: "127.0.0.1:8080"
+2023/05/23 15:39:10 [error] 19520#13112: *98 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/assets/index.3fce1f81.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /assets/index.3fce1f81.css HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/react-proxy"
+2023/05/23 15:39:10 [error] 19520#13112: *98 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/assets/index.e06f7c8c.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /assets/index.e06f7c8c.js HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/module/app-react-proxy"
+2023/05/23 15:40:04 [notice] 22940#24116: signal process started
+2023/05/23 15:42:03 [notice] 23204#23760: signal process started
+2023/05/23 15:43:00 [notice] 9776#13844: signal process started
+2023/05/23 15:44:26 [notice] 24560#23692: signal process started
+2023/05/23 15:47:46 [notice] 4540#18716: signal process started
+2023/05/23 15:48:06 [error] 19540#18748: *116 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/react-proxy" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /react-proxy HTTP/1.1", host: "127.0.0.1:8080"
+2023/05/23 15:48:26 [notice] 24572#8620: signal process started
+2023/05/23 15:48:37 [error] 23672#21472: *118 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/assets/index.3fce1f81.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /assets/index.3fce1f81.css HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/react-proxy"
+2023/05/23 15:48:37 [error] 23672#21472: *118 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\nginx-websit-muli-port-proxy/html/main/assets/index.e06f7c8c.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /assets/index.e06f7c8c.js HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/module/app-react-proxy"
+2023/05/23 15:48:56 [notice] 19380#11444: signal process started
+2023/05/23 15:54:41 [error] 24240#22892: *131 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: localhost2, request: "GET / HTTP/1.1", host: "127.0.0.1:8081"
+2023/05/23 15:54:41 [error] 24240#22892: *132 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 127.0.0.1, server: localhost2, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8081", referrer: "http://127.0.0.1:8081/"
+2023/05/23 15:54:46 [notice] 23776#13148: signal process started
+2023/05/23 15:58:42 [notice] 22952#23712: signal process started

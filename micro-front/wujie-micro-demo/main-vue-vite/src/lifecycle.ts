@@ -6,7 +6,7 @@ const lifecycles = {
   afterUnmount: (appWindow:any) => console.log(`${appWindow.__WUJIE.id} afterUnmount 生命周期`),
   activated: (appWindow:any) => console.log(`${appWindow.__WUJIE.id} activated 生命周期`),
   deactivated: (appWindow:any) => console.log(`${appWindow.__WUJIE.id} deactivated 生命周期`),
-  loadError: (url:string, e:any) => console.log(`${appWindow.__WUJIE.id}-${url} 加载失败`, e),
+  loadError: (url:string, e:any) => console.log(`${url} 加载失败`, e),
 };
 
 export default lifecycles;

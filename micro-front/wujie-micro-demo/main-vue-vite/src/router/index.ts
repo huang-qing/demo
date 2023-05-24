@@ -4,6 +4,8 @@ import HomeView from "../views/HomeView.vue";
 const Vue3View = () => import("../views/Vue3View.vue");
 const Vue3MultipleView = () => import("../views/Vue3MultipleView.vue");
 const ReactView = () => import("../views/ReactView.vue");
+const ReactInBasePathView = () => import("../views/ReactInBasePathView.vue");
+const ReactProxyView = () => import("../views/ReactProxyView.vue");
 const AllAppView = () => import("../views/Multiple.vue");
 const Vue3AboutView = () => import("../views/Vue3AboutView.vue");
 const Vue3ViewWithNoKeepAlive = () =>
@@ -41,7 +43,7 @@ const router = createRouter({
       path: "/vue3/message",
       name: "vue3message",
       props: true,
-      meta:{},
+      meta: {},
       component: Vue3View,
     },
     {
@@ -85,6 +87,16 @@ const router = createRouter({
       path: "/react",
       name: "react",
       component: ReactView,
+    },
+    {
+      path: "/react-in-base-path",
+      name: "react-in-base-path",
+      component: ReactInBasePathView,
+    },
+    {
+      path: "/react-proxy",
+      name: "react-proxy",
+      component: ReactProxyView,
     },
     {
       path: "/all",

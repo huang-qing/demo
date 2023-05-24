@@ -33,21 +33,20 @@ const onDestroyVue3View = () => {
         <span class="fa fa-music"></span>
       </div>
 
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/vue3-no-alive">Vue3(预加载)</RouterLink>
         <RouterLink to="/vue3">Vue3(alive)</RouterLink>
         <RouterLink to="/vue3-about">Vue3 About(alive)</RouterLink>
-        <el-button type="danger" size="small" @click="onDestroyVue3View"
-          >销毁Vue3View</el-button
-        >
+        <el-button type="danger" size="small" @click="onDestroyVue3View">
+          销毁Vue3View
+        </el-button>
 
-        <RouterLink to="/vue3-multiple"
-          >Vue3(alive) multiple</RouterLink
-        >
+        <RouterLink to="/vue3-multiple">Vue3(alive) multiple</RouterLink>
         <RouterLink to="/react">React(alive)</RouterLink>
+        <RouterLink to="/react-in-base-path">React in base path</RouterLink>
+        <RouterLink to="/react-proxy">React Proxy</RouterLink>
         <RouterLink to="/all">All</RouterLink>
       </nav>
       <div></div>

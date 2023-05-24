@@ -13,11 +13,17 @@ export default defineConfig({
     },
   },
   server: {
-    port: 8000,
+    port: 4173,
     // 使用代理
     proxy: {
-      "/app-react": {
+      // 这种方式dev中的proxy无法实现，子应用内部请求无法代理，造成获取资源不正确
+      "/app-react-proxy": {
         target: "http://localhost:8002/",
+        //changeOrigin: true,
+        //rewrite: (path) => path.replace(/^\/app-react-proxy/, ""),
+      },
+      "/app-react": {
+        target: "http://localhost:8007/",
         //changeOrigin: true,
         //rewrite: (path) => path.replace(/^\/app-react/, ""),
       },

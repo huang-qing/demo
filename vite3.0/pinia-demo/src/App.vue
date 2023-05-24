@@ -43,7 +43,7 @@ const changeTokenInAppStore = () => {
       </div>
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/about/123">About</RouterLink>
       </nav>
     </div>
   </header>

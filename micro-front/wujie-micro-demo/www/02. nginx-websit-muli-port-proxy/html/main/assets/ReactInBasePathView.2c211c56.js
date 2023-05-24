@@ -1,0 +1,1 @@
+import{_ as a,o as t,c,a as n}from"./index.0a5aa438.js";const o={};function r(s,_){const e=n("WujieVue");return t(),c(e,{width:"100%",height:"100%",name:"react-in-appReact-basePath",url:"app-react/",sync:!1,alive:"true"})}const p=a(o,[["render",r]]);export{p as default};
