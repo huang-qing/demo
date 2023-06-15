@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
   //debugger;
-  viteLogo
+  viteLogo;
   return (
     <div className="App">
       <div>
@@ -30,8 +30,24 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      {/* <div>
+        <button
+          onClick={() => {
+            debugger;
+            document.addEventListener("keydown", function (e) {
+              console.log("react keydown");
+              console.log(e.target);
+            });
+          }}
+        >
+          添加监听事件
+        </button>
+      </div> */}
+      <div>
+        <input type="text" name="" id="" />
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

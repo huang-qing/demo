@@ -121,3 +121,50 @@ setupApp({
 //   url: "http://localhost:8002/",
 // });
 window.localStorage.setItem("wujie", "main");
+
+// window.document.addEventListener("keydown",function(e){
+//   debugger;
+//   console.log("main keydown");
+//   console.log(e.target);
+// })
+
+function wujieDomKeydownProxy() {
+    var _addEventListener = document.addEventListener;
+    var handler = {
+      apply: function (target: any, thisArg: any, argumentsList: any) {
+        console.log("addEventListener");
+        const type = argumentsList[0];
+        if (type === "keydown") {
+          const fn = function (e: any) {
+            debugger;
+            console.log(e);
+            //var _e = e;
+            var target =
+              (e.target.shadowRoot && e.composed
+                ? e.composedPath()[0] || e.target
+                : e.target) || e.path[0];
+
+            Object.defineProperty(e, "target", {
+              writable: true,
+            });
+            e.target = target;
+            Object.defineProperty(e, "target", {
+              writable: false,
+            });
+
+            argumentsList[1](e);
+          };
+
+          if (argumentsList.length === 3) {
+            return target("keydown", fn, argumentsList[3]);
+          }
+          return target("keydown", fn);
+        }
+        return target(...argumentsList);
+      },
+    };
+
+    document.addEventListener = new Proxy(_addEventListener, handler);
+}
+
+wujieDomKeydownProxy();

@@ -2,7 +2,7 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent, onMounted } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import LibHelloWorld from "libs/LibHelloWorld";
 import { RouterLink, RouterView } from "vue-router";
@@ -26,7 +26,22 @@ function handleJumpToVue3ToAbout() {
   });
 }
 
-const storageString=JSON.stringify( window.__WUJIE_RAW_WINDOW__.localStorage);
+const storageString = JSON.stringify(
+  window?.__WUJIE_RAW_WINDOW__?.localStorage || {}
+);
+
+// 测试无界document keydown e.target 问题
+document.addEventListener("keydown", function (e) {
+  console.log("react keydown");
+  console.log(e.target);
+});
+// onMounted(() => {
+//   // 测试无界document keydown e.target 问题
+//   document.addEventListener("keydown", function (e) {
+//     console.log("react keydown");
+//     console.log(e.target);
+//   });
+// });
 </script>
 
 <template>
@@ -57,7 +72,10 @@ const storageString=JSON.stringify( window.__WUJIE_RAW_WINDOW__.localStorage);
 
     <div>
       <h3>localStorage</h3>
-      {{storageString}}
+      {{ storageString }}
+    </div>
+    <div>
+      <input type="text" name="" id="" />
     </div>
 
     <nav>

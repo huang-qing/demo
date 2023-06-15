@@ -1,1 +1,4 @@
-2023/03/10 13:00:04 [error] 23#23: *1 open() "/usr/share/nginx/html/vue3" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /vue3 HTTP/1.1", host: "localhost:8080"
+2023/05/25 10:53:19 [notice] 23068#22936: signal process started
+2023/05/25 11:06:20 [notice] 4892#22712: signal process started
+2023/06/01 09:47:58 [notice] 28888#18692: signal process started
+2023/06/01 09:47:58 [error] 28888#18692: CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/logs/nginx.pid" failed (2: The system cannot find the file specified)
