@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>proxy</title>
+  </head>
+  <body>
+    <div>测试事件监听</div>
+    <div><input type="text" name="name" id="" /></div>
+  </body>
+
+  <script>
+    var _addEventListener = document.addEventListener;
+    var handler = {
+      apply: function (target, thisArg, argumentsList) {
+        console.log("addEventListener");
+        // var handler = function () {
+        //   debugger;
+        //   var _thisArg = thisArg;
+        //   var _args = argumentsList;
+        //   return target(argumentsList[0], argumentsList[1]);
+        // };
+        //return target(argumentsList[0], argumentsList[1]);
+        //return handler;
+        //return target(...argumentsList);
+        const type = argumentsList[0];
+        if (type === "keydown") {
+          const fn = function (e) {
+            debugger;
+
+            Object.defineProperty(e, "target", {
+              writable: true,
+            });
+            e.target = document;
+
+            argumentsList[1](e);
+          };
+          return target("keydown", fn);
+        }
+        return target(...argumentsList);
+      },
+      construct(target, args) {
+        console.log(`Creating a ${target.name}`);
+        // Expected output: "Creating a monster1"
+
+        return new target(...args);
+      },
+    };
+
+    document.addEventListener = new Proxy(_addEventListener, handler);
+
+    // var _Event = window.Event;
+    // var eventHandler = {
+    //   apply: function (target, thisArg, argumentsList) {
+    //     console.log("eventHandler");
+    //     return target(argumentsList[0], argumentsList[1]);
+    //   },
+    //   construct(target, args) {
+    //     console.log(`Creating a ${target.name}`);
+    //     // Expected output: "Creating a monster1"
+
+    //     return new target(...args);
+    //   },
+    //   get: function (target, prop, receiver) {
+    //     // if (prop === "secret") {
+    //     //   return `${target.secret.substr(0, 4)} ... shhhh!`;
+    //     // }
+    //     console.log("get");
+    //     return Reflect.get(...arguments);
+    //   },
+    // };
+    // window.Event = new Proxy(_Event, eventHandler);
+
+    // var _KeyboardEvent = window.KeyboardEvent;
+    // var KeyboardEventHandler = {
+    //   apply: function (target, thisArg, argumentsList) {
+    //     console.log("KeyboardEventHandler");
+    //     var handler = function () {};
+    //     return target(argumentsList[0], argumentsList[1]);
+    //   },
+    //   construct(target, args) {
+    //     console.log(`Creating a ${target.name}`);
+    //     // Expected output: "Creating a monster1"
+
+    //     return new target(...args);
+    //   },
+    //   get: function (target, prop, receiver) {
+    //     // if (prop === "secret") {
+    //     //   return `${target.secret.substr(0, 4)} ... shhhh!`;
+    //     // }
+    //     console.log("KeyboardEventHandler get");
+    //     return Reflect.get(...arguments);
+    //   },
+    // };
+    // window.KeyboardEvent = new Proxy(_KeyboardEvent, KeyboardEventHandler);
+
+    //var newKeyboardEvent = new KeyboardEvent("e");
+
+    document.addEventListener("keydown", function (e) {
+      //e.stopPropagation();
+      e.preventDefault();
+      console.log("keyboard keydown");
+      //return false;
+    });
+  </script>
+</html>
