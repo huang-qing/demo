@@ -1,6 +1,15 @@
+// 测试代理addEventListener
+//import './js/wujie-compatibility/index'
+// 测试代理addEventListener 对子应用 selectionchange 事件的影响
+//import './js/wujie-compatibility/proxy-addEventListener'
+// 测试replace addEventListener 对子应用 selectionchange 事件的影响
+import "./js/wujie-compatibility/replace-addEventListener";
+
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import WujieVue from "wujie-vue3";
+import { startApp } from "wujie";
+
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import App from "./App.vue";
@@ -9,7 +18,22 @@ import lifecycles from "./lifecycle";
 
 import "./assets/main.css";
 
-const { setupApp, preloadApp, bus } = WujieVue;
+const { setupApp, preloadApp, bus} = WujieVue;
+
+// preloadApp({
+//   name: "react",
+//   url: "http://localhost:8002/",
+//   alive:true
+// });
+
+// startApp({
+//   name: "react",
+//   url: "http://localhost:8002/",
+//   el: document.getElementById("wujie-react"),
+// });
+
+
+
 const app = createApp(App);
 
 app.use(WujieVue);
@@ -49,16 +73,16 @@ window.addEventListener(
 
 // 预加载设置
 
-setupApp({
-  name: "vue3-no-alive",
-  url: "http://localhost:8001/",
-  exec: true,
-  //props,
-  ...lifecycles,
-});
+// setupApp({
+//   name: "vue3-no-alive",
+//   url: "http://localhost:8001/",
+//   exec: true,
+//   //props,
+//   ...lifecycles,
+// });
 
 const reactLifecycles = {
-  beforeLoad: (appWindow:any) => {
+  beforeLoad: (appWindow: any) => {
     console.log(`${appWindow.__WUJIE.id} beforeLoad 生命周期`);
     appWindow.__WUJIE_RAW_WINDOW__.localStorage.setItem(
       "reactLifecycles",
@@ -98,18 +122,18 @@ const reactLifecycles = {
   loadError: (url: string, e: any) => console.log(`${url} 加载失败`, e),
 };
 
-setupApp({
-  name: "react",
-  url: "http://localhost:8002/",
-  exec: true,
-  //props,
-  ...reactLifecycles,
-});
+// setupApp({
+//   name: "react",
+//   url: "http://localhost:8002/",
+//   exec: true,
+//   //props,
+//   ...reactLifecycles,
+// });
 
-setupApp({
-  name: "react",
-  ...lifecycles,
-});
+// setupApp({
+//   name: "react",
+//   ...lifecycles,
+// });
 
 // preloadApp({
 //   name: "vue3-no-alive",
@@ -127,44 +151,3 @@ window.localStorage.setItem("wujie", "main");
 //   console.log("main keydown");
 //   console.log(e.target);
 // })
-
-function wujieDomKeydownProxy() {
-    var _addEventListener = document.addEventListener;
-    var handler = {
-      apply: function (target: any, thisArg: any, argumentsList: any) {
-        console.log("addEventListener");
-        const type = argumentsList[0];
-        if (type === "keydown") {
-          const fn = function (e: any) {
-            debugger;
-            console.log(e);
-            //var _e = e;
-            var target =
-              (e.target.shadowRoot && e.composed
-                ? e.composedPath()[0] || e.target
-                : e.target) || e.path[0];
-
-            Object.defineProperty(e, "target", {
-              writable: true,
-            });
-            e.target = target;
-            Object.defineProperty(e, "target", {
-              writable: false,
-            });
-
-            argumentsList[1](e);
-          };
-
-          if (argumentsList.length === 3) {
-            return target("keydown", fn, argumentsList[3]);
-          }
-          return target("keydown", fn);
-        }
-        return target(...argumentsList);
-      },
-    };
-
-    document.addEventListener = new Proxy(_addEventListener, handler);
-}
-
-wujieDomKeydownProxy();

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>circular ring</title>
+
+    <style type="text/css">
+      #circle0 {
+        width: 200px;
+        height: 200px;
+        /* border-radius: 100px; */
+        background-color: yellowgreen;
+        position: relative;
+      }
+
+      #left {
+        clip: rect(0px 100px 200px 0px);
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 200px;
+        /* background-color: plum; */
+        overflow: hidden;
+      }
+      #right {
+        clip: rect(0px 100px 200px 0px);
+        position: absolute;
+        left: 0px;
+        width: 100px;
+        height: 200px;
+        /* background-color: antiquewhite; */
+        overflow: hidden;
+      }
+
+      .circle-left {
+        width: 100px;
+        height: 200px;
+        border-radius: 0px 100px 100px 0px;
+        position: absolute;
+        right: 0;
+        transform-origin: 0 50%;
+      }
+      .circle-right {
+        width: 100px;
+        height: 200px;
+        border-radius: 100px 0px 0px 100px;
+        position: absolute;
+        right: 0;
+        transform-origin: 100% 50%;
+      }
+
+      #circle2 {
+        background-color: #70f3ff;
+      }
+      #circle3 {
+        background-color: #ff461f;
+        transform: rotate(45deg);
+      }
+      #circle4 {
+        background-color: #bce672;
+        transform: rotate(90deg);
+      }
+      #circle5 {
+        background-color: #ffffff;
+        transform: rotate(135deg);
+      }
+      #circle6 {
+        background-color: #3b2e7e;
+        transform: rotate(225deg);
+      }
+      #circle7 {
+        background-color: #ff2121;
+        transform: rotate(270deg);
+      }
+      #circle8 {
+        background-color: #16a951;
+        transform: rotate(315deg);
+      }
+      #circle9 {
+        background-color: #e0eee8;
+      }
+
+      .occlusion {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50px, -50px);
+        background-color: skyblue;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="circle0" onclick="console.log('circle0')">
+      <div id="left">
+        <div
+          class="circle-left"
+          id="circle2"
+          onclick="console.log('right1')"
+        ></div>
+        <div class="circle-left" id="circle3"></div>
+        <div class="circle-left" id="circle4"></div>
+        <div class="circle-left" id="circle5"></div>
+      </div>
+      <div id="right">
+        <div class="circle-right" id="circle9"></div>
+        <div class="circle-right" id="circle8"></div>
+        <div class="circle-right" id="circle7"></div>
+        <div class="circle-right" id="circle6"></div>
+      </div>
+
+      <div class="occlusion" onclick="console.log('occlusion')"></div>
+    </div>
+
+    <pre>
+        可以通过translate中的ratate来做的，基本思路先确定下来：
+        1.首先在最外层套一个div，在将为其设置border-radius；
+        2.再将图形分成两块，left和right，并且为其添加overflow：hidden
+        3.在left中创建4个小div，并且为其赋上特定的颜色，最后在分别将其旋转0，45，90，135
+        4.right同理；
+    </pre>
+  </body>
+</html>

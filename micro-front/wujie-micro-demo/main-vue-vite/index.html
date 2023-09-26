@@ -7,7 +7,21 @@
     <title>Vite App</title>
   </head>
   <body>
+    <div id="wujie-react"></div>
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+
+    <!-- 1. 正常使用 -->
+    <!-- <script type="module" src="/src/main.ts"></script> -->
+
+
+    <!-- 2. 使用子应用预加载 -->
+
+    <!-- <link rel="modulepreload" as="script" crossorigin href="/src/startApp.ts"> -->
+    <!-- <link rel="preconnect" href="http://127.0.0.1:8002" />
+    <script type="module" src="/src/startApp.ts"></script>
+    <script type="module" src="/src/main.ts"></script> -->
+
+    <!-- 3. 测试使用import()动态加载的方式 -->
+    <script type="module" src="/src/bootstrap.ts"></script>
   </body>
 </html>

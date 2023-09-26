@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端判断上传图片格式</title>
+    <script>
+      function previewFile() {
+        var preview = document.querySelector("img");
+        var file = document.querySelector("input[type=file]").files[0];
+        var reader = new FileReader();
+
+        reader.addEventListener(
+          "load",
+          function () {
+            preview.src = reader.result;
+          },
+          false
+        );
+
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="file" onchange="previewFile()" /><br />
+    <img src="" height="200" alt="Image preview..." />
+  </body>
+</html>
+
+<!-- https://zhuanlan.zhihu.com/p/337176125 -->

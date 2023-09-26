@@ -48,6 +48,7 @@ const onDestroyVue3View = () => {
         <RouterLink to="/react-in-base-path">React in base path</RouterLink>
         <RouterLink to="/react-proxy">React Proxy</RouterLink>
         <RouterLink to="/all">All</RouterLink>
+        <RouterLink to="/wangeditor">WangEdit</RouterLink>
       </nav>
       <div></div>
     </div>

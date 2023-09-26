@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端判断上传图片格式</title>
+    <script>
+      const ImgExt2Hex = {
+        jpg: ["ffd8ffe0", "ffd8ffe1", "ffd8ffe2", "ffd8ffe3"],
+        png: ["89504e47"],
+        ico: ["100"],
+      };
+
+      const vaildImageType = (imgFile, imgExt) => {
+        debugger;
+        const FR = new FileReader();
+        return new Promise((reslove) => {
+          FR.onload = (e) => {
+            const { type } = imgFile;
+            const correctExtHex = ImgExt2Hex[imgExt];
+            let af = e.target.result,
+              view = new DataView(af),
+              first4Byte = view.getUint32(0, false), // 获取32bit数
+              hexValue = Number(first4Byte).toString(16);
+            if (!type || !correctExtHex) {
+              return reslove(false);
+            }
+            return reslove(correctExtHex.indexOf(hexValue) > -1);
+          };
+          FR.readAsArrayBuffer(imgFile);
+        });
+      };
+
+      const vaildImageTypeByDataURL = (imgFile, imgExt) => {
+        debugger;
+        const FR = new FileReader();
+        return new Promise((reslove) => {
+          FR.onload = (e) => {
+            const { type } = imgFile;
+            const correctExtHex = ImgExt2Hex[imgExt];
+            let af = e.target.result,
+              view = new DataView(af),
+              first4Byte = view.getUint32(0, false), // 获取32bit数
+              hexValue = Number(first4Byte).toString(16);
+            if (!type || !correctExtHex) {
+              return reslove(false);
+            }
+            return reslove(correctExtHex.indexOf(hexValue) > -1);
+          };
+          FR.readAsArrayBuffer(imgFile);
+        });
+      };
+
+
+     async function fileOnchange(e) {
+        debugger;
+        const file = e.target.files[0]
+        if (!await vaildImageType(file, 'png')) {
+            console.log('格式不正确');
+            return ; //  图片格式不正确
+        }
+        console.log('格式正确');
+      }
+    
+    
+    
+    </script>
+  </head>
+  <body>
+    <form action="uploadFile.do" enctype="multipart/form-data" type="post">
+      <input type="file" onchange="fileOnchange(event);" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
+
+<!-- https://zhuanlan.zhihu.com/p/337176125 -->

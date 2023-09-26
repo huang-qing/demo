@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IntersectionObserver</title>
+  </head>
+  <body style="font-size: 24px; text-align: center">
+    <div id="container"></div>
+    <div id="loadMore">加载中...</div>
+  </body>
+  <script>
+    const container = document.querySelector("#container");
+    const loadMore = document.querySelector("#loadMore");
+    let index = 0;
+
+    const loadItems = (count) => {
+      [...Array(count).keys()].forEach((key) => {
+        const p = document.createElement("P");
+        p.innerHTML = `${key + index}`;
+        container.appendChild(p);
+      });
+      index += count;
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(({ isIntersecting }) => {
+        if (isIntersecting) {
+          loadItems(20);
+        }
+      });
+    });
+
+    observer.observe(loadMore);
+  </script>
+</html>
