@@ -5,14 +5,26 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <style>
+      /* 测试加载背景 */
+      #wujie-react {
+        height: 600px;
+        width: 400px;
+        background-image: url(/src/assets/logo.svg), url(/src/assets/logo.png);
+        /* background-attachment: fixed; */
+        background-position: top center, top center;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 80px 80px, 30px 30px;
+      }
+    </style>
   </head>
   <body>
-    <div id="wujie-react"></div>
+    <!-- 验证提前加载子应用性能 -->
+    <!-- <div id="wujie-react"></div> -->
     <div id="app"></div>
 
     <!-- 1. 正常使用 -->
     <!-- <script type="module" src="/src/main.ts"></script> -->
-
 
     <!-- 2. 使用子应用预加载 -->
 

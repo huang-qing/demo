@@ -4,10 +4,11 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import wujiePlugin from "./plugin/vite-plugin-wujue";
+import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [wujiePlugin(), vue(), vueJsx()],
+  plugins: [VitePWA({ registerType: 'autoUpdate' }),wujiePlugin(), vue(), vueJsx()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -30,4 +31,7 @@ export default defineConfig({
       },
     },
   },
+  build:{
+    minify:false
+  }
 });

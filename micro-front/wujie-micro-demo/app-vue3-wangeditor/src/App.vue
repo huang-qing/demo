@@ -7,12 +7,15 @@ import "@wangeditor/editor/dist/css/style.css"; // 引入 css
 import { onBeforeUnmount, ref, shallowRef, onMounted } from "vue";
 import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
 
+
+
 // 编辑器实例，必须用 shallowRef
 const editorRef = shallowRef();
 
 // 内容 HTML
 //const valueHtml = ref("<p>hello</p>");
 const valueHtml = ref("");
+const value1 = ref<number>(0);
 
 // 模拟 ajax 异步获取内容
 onMounted(() => {
@@ -49,6 +52,7 @@ window.document.addEventListener("selectionchange", function (e) {
 </script>
 
 <template>
+
   <div style="border: 1px solid #ccc">
     <Toolbar
       style="border-bottom: 1px solid #ccc"
@@ -69,6 +73,7 @@ window.document.addEventListener("selectionchange", function (e) {
   </div>
   <div>
     <div contenteditable="true">wangEdit子应用区域</div>
+    
   </div>
 </template>
 

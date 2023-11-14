@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download</title>
+    <!--1. 服务端 Content-Disposition: attachment; filename="filename.jpg" 
+
+        Content-Disposition:attachment;filename=123.jpg;filename*=utf-8''123.jpg
+
+        window.open
+        创建一个iframe,加载后删除
+    -->
+    <!--2. 同域名,使用a标签download属性 <a download=''> -->
+  </head>
+  <body>
+    <!-- <iframe style="display: none;" src="/100M.doc"></iframe> -->
+    <!--  跨域文件下载 response header使用 Content-Disposition:attachment;filename=123.jpg;filename*=utf-8''123.jpg  -->
+    <!-- <iframe
+      style="display: none"
+      src="http://dev.3dplaza.cn/api/file/applicationFile/download?eid=P_STO_FILE_65530e32e4b0df910490f221"
+    ></iframe> -->
+    <p><a href="/100M.doc" download="100mb.doc">download 100mb.doc</a></p>
+    <p><a href="/5GB.doc" download="5gb.doc">download 5gb.doc</a></p>
+
+    <p>
+      <button onclick="window.open('/100M.doc')">download 100mb.doc</button>
+    </p>
+    <p>
+      <!-- open的方式返回的不正确会影响页面，不建议使用 -->
+      <button
+        onclick="window.open('http://dev.3dplaza.cn/api/file/applicationFile/download?eid=P_STO_FILE_65530e32e4b0df910490f221','_self')"
+      >
+        跨域 header使用
+        Content-Disposition:attachment;filename=xxx.xxx;filename*=utf-8''xxx.xxx
+      </button>
+    </p>
+    <p>
+      <button
+        onclick="createFiledownLink('http://dev.3dplaza.cn/api/file/applicationFile/download?eid=P_STO_FILE_65290ac7e4b0618aa8bfcc51')"
+      >
+        动态创建link
+      </button>
+    </p>
+    <p><a href="/色彩-靛青.jpg">jpg</a></p>
+    <p>
+      <a href="/色彩-靛青.jpg" download="靛青.jpg">使用 downlaod属性 jpg图片</a>
+    </p>
+    <p>
+      <a
+        href="http://dev.3dplaza.cn/api/file/applicationFile/download?eid=P_STO_FILE_65530e32e4b0df910490f221"
+        download="跨域文件下载测试.jpg"
+      >
+        download 跨域 文件服务文件
+      </a>
+    </p>
+    <p>
+      <!-- <a
+        href="http://10.0.66.142:9000/plm-default-app-default-volume/P_SYS_COMPANY_155f6a331e804b69a6fc47e6273699fc/654b3d08e4b0ad7c501c067f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20231108%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231108T075216Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=4ff9fc0c4add7866ae07cdc15c29c18dccb9d9be3ec0f7c24cec682769cfd9f2"
+        download="图片测试.jpg"
+        >download 文件服务文件</a
+      > -->
+    </p>
+
+    <p id="time"></p>
+  </body>
+  <script>
+    var i = 0;
+    setInterval(function () {
+      document.querySelector("#time").innerHTML = i++;
+    }, 1000);
+
+    function createFiledownLink(url) {
+      var link = document.createElement("a");
+      link.style.display = "none";
+      link.href = url;
+      link.target='_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</html>

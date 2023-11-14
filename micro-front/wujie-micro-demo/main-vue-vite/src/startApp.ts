@@ -11,9 +11,17 @@ const { setupApp, preloadApp, bus} = WujieVue;
 //   fiber:false
 // });
 
+function createSebApp(){
+  startApp({
+    name: "reactx",
+    url: "http://127.0.0.1:8002",
+    el: document.getElementById("wujie-react"),
+  });
+}
 
-startApp({
-  name: "reactx",
-  url: "http://127.0.0.1:8002",
-  el: document.getElementById("wujie-react"),
-});
+//createSebApp();
+
+// 测试延时加载
+setTimeout(() => {
+  createSebApp();
+}, 1000);

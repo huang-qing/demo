@@ -11,6 +11,7 @@ const Vue3AboutView = () => import("../views/Vue3AboutView.vue");
 const Vue3ViewWithNoKeepAlive = () =>
   import("../views/Vue3ViewWithNoKeepAlive.vue");
 const Vue3WangEidgorView=()=>import("../views/Vue3WangEditorView.vue");  
+const Vue3AntdSlider = () => import("../views/Vue3AntSlider.vue");
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -103,6 +104,11 @@ const router = createRouter({
       path: "/wangeditor",
       name: "wangeditor",
       component: Vue3WangEidgorView,
+    },
+    {
+      path: "/vue3-antd-slider",
+      name: "slider",
+      component: Vue3AntdSlider,
     },
     {
       path: "/all",

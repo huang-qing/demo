@@ -49,6 +49,7 @@ const onDestroyVue3View = () => {
         <RouterLink to="/react-proxy">React Proxy</RouterLink>
         <RouterLink to="/all">All</RouterLink>
         <RouterLink to="/wangeditor">WangEdit</RouterLink>
+        <RouterLink to="/vue3-antd-slider">Slider</RouterLink>
       </nav>
       <div></div>
     </div>
@@ -121,4 +122,5 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+
 </style>

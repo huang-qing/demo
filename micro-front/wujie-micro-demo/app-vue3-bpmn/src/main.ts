@@ -86,7 +86,7 @@ window.$wujie?.bus.$on("routeChange", ({ subApp, path }: any) => {
 
 if(window.$wujie){
   window.localStorage.setItem("app-vue3-wujue","app-vue3-wujue");
-  debugger;
+  //debugger;
   window.__WUJIE_RAW_WINDOW__.localStorage.setItem("app-vue3-wujue-raw-window","app-vue3-wujue-raw-window");
  
 }

@@ -79,8 +79,12 @@ document.addEventListener("keydown", function (e) {
 //   }, 0);
 // });
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function render() {
+  ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
+
+render();

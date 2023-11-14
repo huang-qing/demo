@@ -20,7 +20,7 @@
       }
       var _listener = function (e: any) {
         //debugger;
-        console.log("into ______listener:" + e.type);
+        //console.log("into ______listener:" + e.type);
         //todo
         listener(e);
       };
