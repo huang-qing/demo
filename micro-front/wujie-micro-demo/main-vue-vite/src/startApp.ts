@@ -19,9 +19,9 @@ function createSebApp(){
   });
 }
 
-//createSebApp();
+createSebApp();
 
 // 测试延时加载
-setTimeout(() => {
-  createSebApp();
-}, 1000);
+// setTimeout(() => {
+//   createSebApp();
+// }, 1000);

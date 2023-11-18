@@ -15,7 +15,7 @@ const reverse = ref<boolean>(true);
 const current = ref(6);
 
 //datepicker
-const datepickerValue1 = ref<Dayjs>();
+const datepickerValue1 = ref<any>();
 
 // table
 interface DataItem {

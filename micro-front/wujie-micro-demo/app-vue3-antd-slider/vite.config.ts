@@ -1,13 +1,14 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 // import federation from "@originjs/vite-plugin-federation";
-import { VitePWA } from 'vite-plugin-pwa';
-
+import { VitePWA } from "vite-plugin-pwa";
+import mkcert from "vite-plugin-mkcert";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    VitePWA({ registerType: 'autoUpdate' }),
+    mkcert(),
+    // VitePWA({ registerType: 'autoUpdate' }),
     vue(),
     // federation({
     //   name: "app-vue3",
@@ -26,11 +27,14 @@ export default defineConfig({
     port: 8007,
     cors: true,
   },
+  preview: {
+    https: true,
+  },
   optimizeDeps: {
     //exclude: ["@wangeditor/editor"],
   },
-  build:{
-    minify:false
+  build: {
+    minify: false,
   },
   css: {
     preprocessorOptions: {

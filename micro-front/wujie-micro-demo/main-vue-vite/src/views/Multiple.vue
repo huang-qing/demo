@@ -5,14 +5,14 @@
       width="100%"
       height="100%"
       name="react-in-all"
-      url="http://localhost:8002/"
+      url="http://127.0.0.1:8002/"
       :sync="true"
     ></WujieVue>
     <WujieVue
       width="100%"
       height="100%"
       name="vue3-in-all"
-      url="http://localhost:8001/"
+      url="http://127.0.0.1:8001/"
       sync="true"
     ></WujieVue>
   </div>

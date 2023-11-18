@@ -19,7 +19,7 @@ const onDestroyVue3View = () => {
     />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="You did it! 444" />
 
       <div>
         iconfon字体图标

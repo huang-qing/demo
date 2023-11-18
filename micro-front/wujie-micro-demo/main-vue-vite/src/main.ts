@@ -18,7 +18,11 @@ import lifecycles from "./lifecycle";
 
 import "./assets/main.css";
 
-const { setupApp, preloadApp, bus} = WujieVue;
+import { registerSW } from "virtual:pwa-register";
+
+registerSW({ immediate: true });
+
+const { setupApp, preloadApp, bus } = WujieVue;
 
 // preloadApp({
 //   name: "react",
@@ -31,8 +35,6 @@ const { setupApp, preloadApp, bus} = WujieVue;
 //   url: "http://localhost:8002/",
 //   el: document.getElementById("wujie-react"),
 // });
-
-
 
 const app = createApp(App);
 
