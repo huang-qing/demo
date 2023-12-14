@@ -1,4 +1,5 @@
-export default function wujiePlugin() {
+import type { Plugin } from "vite";
+export default function wujiePlugin(): Plugin {
   return {
     // 插件名称
     name: "vite:wujie",

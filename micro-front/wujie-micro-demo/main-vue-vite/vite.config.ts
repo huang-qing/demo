@@ -29,6 +29,8 @@ export default defineConfig({
       // devOptions: {
       //   enabled: true,
       // },
+      // https://segmentfault.com/a/1190000019581713?utm_source=sf-backlinks
+      // https://segmentfault.com/a/1190000019281388?utm_source=tag-newest
       workbox: {
         maximumFileSizeToCacheInBytes: 1024000 * 4,
         runtimeCaching: [
@@ -36,14 +38,15 @@ export default defineConfig({
             // urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
             //urlPattern: /^http:\/\/(localhost|127\.0\.0\.1):(8008|8002).*?\.(js|css)$/i,
             urlPattern: /^http:\/\/.*\.(js|css)$/i,
-            handler: "CacheFirst",
+            //handler: "CacheFirst",
+            handler: "StaleWhileRevalidate",
             options: {
               cacheName: "workbox-subappcache",
-              expiration: {
-                maxEntries: 10,
-                //maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
-                maxAgeSeconds: 60 * 60 * 24, // <== 1 days
-              },
+              // expiration: {
+              //   maxEntries: 10,
+              //   //maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+              //   maxAgeSeconds: 60 * 60 * 24, // <== 1 days
+              // },
               cacheableResponse: {
                 statuses: [0, 200],
               },

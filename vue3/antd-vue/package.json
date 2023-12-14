@@ -15,10 +15,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "ant-design-vue": "^3.2.20",
+    "mathlive": "^0.98.4",
     "pinia": "^2.1.7",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.5",
-    "ant-design-vue": "^3.2.20"
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.3",
