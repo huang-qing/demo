@@ -2,3 +2,24 @@
 2023/05/25 11:06:20 [notice] 4892#22712: signal process started
 2023/06/01 09:47:58 [notice] 28888#18692: signal process started
 2023/06/01 09:47:58 [error] 28888#18692: CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2024/01/18 15:18:06 [notice] 35844#15060: signal process started
+2024/01/18 18:33:13 [notice] 21352#4716: signal process started
+2024/01/18 18:33:32 [notice] 19180#21004: signal process started
+2024/01/18 18:33:35 [error] 9440#19520: *11 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/html/666" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: www.httpsdemo.cn, request: "GET /666 HTTP/1.1", host: "www.httpsdemo.cn"
+2024/01/18 18:34:14 [notice] 20152#5864: signal process started
+2024/01/18 18:40:15 [notice] 21756#17180: signal process started
+2024/01/18 18:40:49 [error] 9600#18576: *15 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/html/reactdfdfddfdfdf" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: www.httpsdemo.cn, request: "GET /reactdfdfddfdfdf HTTP/1.1", host: "www.httpsdemo.cn"
+2024/01/18 18:40:55 [error] 9600#18576: *15 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/html/dfdf" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: www.httpsdemo.cn, request: "GET /dfdf HTTP/1.1", host: "www.httpsdemo.cn"
+2024/01/18 18:41:10 [notice] 22328#12484: signal process started
+2024/01/18 18:41:13 [error] 9600#18576: *16 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/html/dfdf" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: www.httpsdemo.cn, request: "GET /dfdf HTTP/1.1", host: "www.httpsdemo.cn"
+2024/01/23 16:16:14 [emerg] 22256#25232: unknown directive "http2" in E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/conf/nginx.conf:59
+2024/01/23 16:18:52 [notice] 25316#24484: signal process started
+2024/01/23 16:18:52 [error] 25316#24484: OpenEvent("Global\ngx_reload_22004") failed (2: The system cannot find the file specified)
+2024/01/23 16:30:56 [notice] 24556#19432: signal process started
+2024/01/23 17:40:01 [notice] 23820#1364: signal process started
+2024/01/23 17:40:04 [notice] 21284#23372: signal process started
+2024/01/23 17:40:04 [error] 21284#23372: CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2024/01/24 21:03:05 [notice] 25848#29192: signal process started
+2024/01/24 21:03:23 [error] 26040#35992: *3 directory index of "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/data/images/" is forbidden, client: 127.0.0.1, server: www.httpsdemo.cn, request: "GET /images/ HTTP/1.1", host: "www.httpsdemo.cn"
+2024/01/24 21:04:37 [error] 26040#35992: *3 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\01. nginx-websit-one-port/data/images/logo.svg" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: www.httpsdemo.cn, request: "GET /images/logo.svg HTTP/1.1", host: "www.httpsdemo.cn"
+2024/01/24 21:09:45 [notice] 29968#32548: signal process started

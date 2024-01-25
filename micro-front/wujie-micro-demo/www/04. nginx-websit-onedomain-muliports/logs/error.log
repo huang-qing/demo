@@ -1,0 +1,12 @@
+2024/01/19 15:00:38 [notice] 13740#1976: signal process started
+2024/01/19 15:01:51 [notice] 17772#25332: signal process started
+2024/01/19 15:03:42 [notice] 23740#26924: signal process started
+2024/01/19 15:04:43 [notice] 21732#21396: signal process started
+2024/01/19 15:06:02 [notice] 21804#16492: signal process started
+2024/01/19 15:09:50 [notice] 7960#23256: signal process started
+2024/01/19 15:55:59 [error] 2416#24116: *14 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/htmllast" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: www.httpdemo.cn, request: "GET /app-react/jd.js HTTP/1.1", host: "www.httpdemo.cn"
+2024/01/19 19:33:56 [notice] 30284#30688: signal process started
+2024/01/19 19:34:43 [notice] 30520#2112: signal process started
+2024/01/23 09:27:44 [notice] 35716#37252: signal process started
+2024/01/23 09:27:47 [notice] 34496#35280: signal process started
+2024/01/23 09:27:47 [error] 34496#35280: CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/logs/nginx.pid" failed (2: The system cannot find the file specified)

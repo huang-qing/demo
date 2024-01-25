@@ -1,0 +1,1 @@
+import{_ as o,o as c,c as a,a as r}from"./index.0a5aa438.js";const t={};const url_path="http://www.httpsdemo.cn/uuid-xxx-uuid";const url_server="http://www.httpsdemo.cn:8000/";function n(s,_){const e=r("WujieVue");return c(),a(e,{width:"100%",height:"100%",name:"react-proxy1",url:url_path,sync:!1,alive:"false"})}const i=o(t,[["render",n]]);export{i as default};
