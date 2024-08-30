@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      function overHandler(ev) {
+        // Determine the target event's gotpointercapture handler
+        var gotCaptureHandler = ev.target.ongotpointercapture;
+      }
+
+      function enterHandler(ev) {
+        debugger;
+        // 处理 pointerenter 事件
+      }
+
+      function init() {
+        var el = document.getElementById("target");
+        el.ongotpointercapture = overHandler;
+        el.onpointerenter = enterHandler;
+      }
+    </script>
+  </head>
+
+  <body onload="init();">
+    <div id="target">Touch me ...</div>
+  </body>
+</html>

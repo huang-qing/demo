@@ -10,3 +10,57 @@
 2024/01/23 09:27:44 [notice] 35716#37252: signal process started
 2024/01/23 09:27:47 [notice] 34496#35280: signal process started
 2024/01/23 09:27:47 [error] 34496#35280: CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2024/01/25 10:55:25 [notice] 34416#4064: signal process started
+2024/01/25 11:01:25 [error] 9360#9276: *10 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/html/app-react-server/app-react-server" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET /app-react-server HTTP/1.1", host: "127.0.0.1:8000"
+2024/01/25 11:01:25 [error] 9360#9276: *10 CreateFile() "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/html/app-react-server/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8000", referrer: "http://127.0.0.1:8000/app-react-server"
+2024/01/25 11:01:30 [error] 9360#9276: *10 "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/html/app-react-server/app-react-server/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET /app-react-server/ HTTP/1.1", host: "127.0.0.1:8000"
+2024/01/25 11:01:36 [error] 9360#9276: *10 "E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/html/app-react-server/app-react-server/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET /app-react-server/ HTTP/1.1", host: "127.0.0.1:8000"
+2024/01/25 11:02:02 [notice] 9336#37184: signal process started
+2024/01/25 11:08:03 [emerg] 33936#34200: invalid number of arguments in "proxy_set_header" directive in E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/conf/nginx.conf:98
+2024/01/25 11:08:29 [emerg] 23916#24908: invalid number of arguments in "proxy_set_header" directive in E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/conf/nginx.conf:97
+2024/01/25 11:08:59 [notice] 28272#38724: signal process started
+2024/01/25 11:10:38 [notice] 11060#25624: signal process started
+2024/01/25 14:07:03 [emerg] 35032#32660: unexpected "}" in E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/conf/nginx.conf:43
+2024/01/25 14:07:22 [emerg] 36312#37824: invalid URL prefix in E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/conf/nginx.conf:107
+2024/01/25 14:07:53 [emerg] 27316#26464: invalid URL prefix in E:\Documents\GitHub\io\demo\micro-front\wujie-micro-demo\www\04. nginx-websit-onedomain-muliports/conf/nginx.conf:107
+2024/01/25 14:08:54 [notice] 33176#35008: signal process started
+2024/01/25 14:16:44 [notice] 4396#5152: signal process started
+2024/01/25 14:17:37 [error] 34796#33820: *10 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9050"
+2024/01/25 14:17:37 [error] 34796#33820: *10 CreateFile() "E:/docs/favicon.ico" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:9050", referrer: "http://127.0.0.1:9050/"
+2024/01/25 14:20:08 [notice] 38372#32712: signal process started
+2024/01/25 14:20:13 [error] 20112#24712: *11 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9050"
+2024/01/25 14:20:14 [error] 20112#24712: *11 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9050"
+2024/01/25 14:20:16 [error] 20112#24712: *11 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9050"
+2024/01/25 14:20:18 [error] 20112#24712: *11 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9050"
+2024/01/25 14:20:22 [error] 20112#24712: *11 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9050"
+2024/01/25 14:22:57 [notice] 26856#6632: signal process started
+2024/01/25 14:26:57 [notice] 33776#37836: signal process started
+2024/01/25 14:27:05 [error] 33456#14168: *12 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9050"
+2024/01/25 14:27:07 [error] 33456#14168: *12 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9050"
+2024/01/25 14:27:09 [error] 33456#14168: *12 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9050"
+2024/01/25 14:27:31 [notice] 23340#3504: signal process started
+2024/01/25 14:27:38 [notice] 35312#35996: signal process started
+2024/01/25 14:27:43 [error] 27520#34444: *13 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:27:43 [error] 27520#34444: *13 CreateFile() "E:/docs/favicon.ico" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:9000", referrer: "http://127.0.0.1:9000/"
+2024/01/25 14:27:46 [error] 27520#34444: *13 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:28:05 [notice] 32208#2996: signal process started
+2024/01/25 14:28:10 [error] 20000#17552: *14 "E:/docsindex.html" is not found (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:28:11 [error] 20000#17552: *14 "E:/docsindex.html" is not found (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:28:12 [error] 20000#17552: *14 "E:/docsindex.html" is not found (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:28:13 [error] 20000#17552: *14 "E:/docsindex.html" is not found (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:29:22 [error] 33288#4244: *1 "E:/docsindex.html" is not found (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:29:23 [error] 33288#4244: *1 "E:/docsindex.html" is not found (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:29:26 [error] 33288#4244: *1 "E:/docsindex.html" is not found (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:29:29 [error] 33288#4244: *1 "E:/docsindex.html" is not found (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:32:44 [notice] 33456#34076: signal process started
+2024/01/25 14:33:12 [notice] 24640#22756: signal process started
+2024/01/25 14:33:26 [error] 37312#23568: *4 CreateFile() "E:/docs" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET /docs HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:33:34 [error] 37312#23568: *4 "E:/docs/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: 127.0.0.1, request: "GET /docs/ HTTP/1.1", host: "127.0.0.1:9000"
+2024/01/25 14:33:53 [notice] 35496#2232: signal process started
+2024/01/25 14:34:43 [notice] 1796#14600: signal process started
+2024/01/25 14:35:24 [notice] 37960#38368: signal process started
+2024/01/25 14:36:41 [notice] 24816#17968: signal process started
+2024/01/25 14:37:15 [notice] 1508#37872: signal process started
+2024/01/25 14:37:36 [notice] 37444#37236: signal process started
+2024/01/25 14:38:00 [notice] 32900#21736: signal process started
+2024/01/25 14:38:39 [notice] 37952#36492: signal process started
