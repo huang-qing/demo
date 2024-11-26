@@ -1,0 +1,28 @@
+{
+  "name": "main",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "custom-event-polyfill": "^1.0.7",
+    "ant-design-vue": "^4.2.3",
+    "core-js": "^3.38.1",
+    "element-plus": "^2.8.1",
+    "vue": "^3.4.37",
+    "vue-router":"^4.4.3",
+    "whatwg-fetch": "^3.6.2",
+    "wujie": "^1.0.22",
+    "wujie-vue3": "^1.0.22"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.2",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vue-tsc": "^2.0.29"
+  }
+}
